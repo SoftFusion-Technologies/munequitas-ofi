@@ -45,8 +45,7 @@ const Navbar = () => {
           <div className="flex-1 flex items-center justify-center sm:items-center sm:justify-center">
             <div className="flex-shrink-0">
               <a href="/">
-                <img src={ImgLogo} alt="Logo de muñequitas" className="h-28"
-                />
+                <img src={ImgLogo} alt="Logo de muñequitas" className="h-28" />
               </a>
             </div>
 
@@ -57,8 +56,8 @@ const Navbar = () => {
                   'INICIO',
                   'VESTIDOS LARGOS',
                   'VESTIDOS CORTOS',
-                  'NOVIAS',
-                  'INVITADAS'
+                  'VESTIDOS NENAS',
+                  'NOVIAS'
                 ].map((item, idx) => (
                   <Link
                     key={idx}
@@ -86,8 +85,8 @@ const Navbar = () => {
             'INICIO',
             'VESTIDOS LARGOS',
             'VESTIDOS CORTOS',
-            'NOVIAS',
-            'INVITADAS'
+            'VESTIDOS NENAS',
+            'NOVIAS'
           ].map((item, idx) => (
             <Link
               key={idx}
