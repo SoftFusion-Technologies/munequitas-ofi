@@ -54,6 +54,7 @@ const Navbar = () => {
               <div className="flex space-x-6 justify-center">
                 {[
                   'INICIO',
+                  'OFERTAS',
                   'VESTIDOS LARGOS',
                   'VESTIDOS CORTOS',
                   'VESTIDOS NENAS',
@@ -83,6 +84,7 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 space-y-1">
           {[
             'INICIO',
+            'OFERTAS',
             'VESTIDOS LARGOS',
             'VESTIDOS CORTOS',
             'VESTIDOS NENAS',
