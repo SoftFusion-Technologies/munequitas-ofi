@@ -104,15 +104,15 @@ const Turnero = () => {
         className="w-full p-4 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
       />
 
-      <div className="w-full relative mb-4">
-        <label className="absolute top-2 left-4 text-gray-600 text-sm bg-white px-1">
+      <div className="w-full flex flex-col mb-4">
+        <label className="text-white text-sm font-medium mb-1">
           Fecha de Visita
         </label>
         <input
           type="date"
           value={fecha}
           onChange={handleChangeFecha}
-          className="w-full p-4 pt-6 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 text-gray-500 bg-white cursor-pointer"
+          className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 text-gray-700 bg-white cursor-pointer"
         />
       </div>
 
