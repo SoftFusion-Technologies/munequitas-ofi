@@ -45,7 +45,7 @@ const Turnero = () => {
       setNombre('');
       setCelular('');
       setFecha('');
-      setCategoria('INICIO');
+      setCategoria('');
       setMensajeEnviado(false);
     }, 3000);
   };
