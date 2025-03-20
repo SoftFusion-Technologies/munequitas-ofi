@@ -108,8 +108,9 @@ const Turnero = () => {
       <input
         type="date"
         value={fecha}
+        placeholder="Seleccione una fecha"
         onChange={handleChangeFecha}
-        className="w-full p-4 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+        className="w-full p-4 mb-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 text-gray-500 bg-white bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 20 20%22 fill=%22gray%22><path d=%22M6 2a1 1 0 112 0v1h4V2a1 1 0 112 0v1h2a2 2 0 012 2v2H2V5a2 2 0 012-2h2V2zM2 8h16v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8z%22/></svg>')] bg-no-repeat bg-right bg-[length:20px_20px] cursor-pointer"
       />
 
       {/* Categoría */}
