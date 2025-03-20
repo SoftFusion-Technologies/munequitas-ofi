@@ -112,9 +112,9 @@ const Footer = () => {
               href="https://softfusion.com.ar/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-pink-300 hover:text-pink-500"
+              className="text-black hover:text-white font-bold"
             >
-              Soft Fusion
+              SOFT FUSION
             </a>
           </p>
         </div>
