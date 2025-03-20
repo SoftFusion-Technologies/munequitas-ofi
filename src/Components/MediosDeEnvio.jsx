@@ -41,8 +41,8 @@ const MediosDeEnvio = () => {
         </motion.div>
       </div>
 
-      <div className="mt-6 text-center text-sm text-gray-600">
-        {/* <p>Selecciona el medio de envío que prefieras</p> */}
+      <div className="mt-2 text-center text-sm text-gray-600">
+         <p>Envíos gratis a partir de $120.000</p>
       </div>
     </motion.div>
   );

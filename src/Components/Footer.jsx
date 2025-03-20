@@ -92,7 +92,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-2">
               <li>📍España 1875, Concepción Tucumán</li>
               <li>📞 +54 9 3812 06-2925</li>
-              <li>Muñequitas Alquiler de Vestidos</li>
+              <li>Muñequita Alquiler de Vestidos</li>
             </ul>
           </div>
 
@@ -100,7 +100,7 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg">Derechos</h3>
             <p className="mt-4 text-sm">
-              &copy; 2025 Muñequitas Alquiler. Todos los derechos reservados.
+              &copy; 2025 Muñequita Alquiler. Todos los derechos reservados.
             </p>
           </div>
         </div>

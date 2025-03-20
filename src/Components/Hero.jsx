@@ -39,7 +39,7 @@ const Hero = () => {
             transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
           >
             Vestidos cortos, largos, de novia y para niñas. Alquila el look
-            ideal en <span className="font-bold">Muñequitas</span>.
+            ideal en <span className="font-bold">Muñequita</span>.
           </motion.p>
         </div>
 
