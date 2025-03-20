@@ -5,7 +5,7 @@ const Turnero = () => {
   const [celular, setCelular] = useState('');
   const [fecha, setFecha] = useState('');
   const [categoria, setCategoria] = useState('VESTIDOS LARGOS');
-  const [detalle, setDetalle] = useState(false);
+  const [detalle, setDetalle] = useState('');
   const [mensajeEnviado, setMensajeEnviado] = useState(false);
 
   const opciones = [
