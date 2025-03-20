@@ -45,7 +45,7 @@ const Navbar = () => {
           <div className="flex-1 flex items-center justify-center sm:items-center sm:justify-center">
             <div className="flex-shrink-0">
               <a href="/">
-                <img src={ImgLogo} alt="Logo de Muñequita" className="h-28" />
+                <img src={ImgLogo} alt="Logo de Muñequita" className="h-20 -mt-2" />
               </a>
             </div>
 

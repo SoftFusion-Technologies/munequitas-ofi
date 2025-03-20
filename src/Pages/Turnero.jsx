@@ -81,7 +81,8 @@ const Turnero = () => {
   };
 
   return (
-    <div className="mt-20 mb-20 max-w-lg mx-auto p-8 bg-gradient-to-r from-[#795059] via-[#9e5e63] to-[#5a2e32] shadow-xl rounded-xl">
+    <div
+      className="mt-20 mb-20 max-w-lg mx-auto p-8 bg-gradient-to-r from-[#795059] via-[#9e5e63] to-[#5a2e32] shadow-xl rounded-xl">
       <h2 className="text-3xl font-bold mb-6 text-center text-white">
         Solicitar Turno
       </h2>
@@ -129,10 +130,20 @@ const Turnero = () => {
         ))}
       </select>
 
+      <div className="w-full flex flex-col mb-4">
+        {/* <label className="text-gray-700 text-sm font-medium mb-1">
+          Detalles
+        </label> */}
+        <textarea
+          placeholder="Puedes especificar el talle, color, etc."
+          className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 text-gray-700 bg-white resize-none"
+          rows="3"
+        />
+      </div>
       {/* Botón de Enviar */}
       <button
         onClick={handleSubmit}
-        className="w-full bg-blue-700 text-white font-semibold py-3 rounded-lg shadow-lg hover:bg-blue-800 transition duration-300"
+        className="w-full bg-green-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:bg-blue-800 transition duration-300"
       >
         Enviar a WhatsApp
       </button>
