@@ -2,6 +2,8 @@ import React from 'react';
 
 import Hero from '../Components/Hero';
 import InfoSection from '../Components/InfoSection';
+import FeaturedProducts from './FeaturedProducts';
+
 import MediosDePago from '../Components/MediosDePago';
 import MediosDeEnvio from '../Components/MediosDeEnvio';
 import Testimonials from '../Components/Testimonials';
@@ -10,6 +12,10 @@ const Home = () => {
     <div>
       <Hero />
       <InfoSection />
+      <div className="-mt-20">
+        {' '}
+        <FeaturedProducts />{' '}
+      </div>
       {/* Contenedor flex para mostrar los componentes en una fila */}
       <div className="flex flex-col sm:flex-row justify-between space-x-4 px-6 py-8">
         <div className="flex-1 mb-4 sm:mb-0">

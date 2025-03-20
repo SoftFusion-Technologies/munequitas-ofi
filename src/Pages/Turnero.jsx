@@ -4,7 +4,8 @@ const Turnero = () => {
   const [nombre, setNombre] = useState('');
   const [celular, setCelular] = useState('');
   const [fecha, setFecha] = useState('');
-  const [categoria, setCategoria] = useState('INICIO');
+  const [categoria, setCategoria] = useState('VESTIDOS LARGOS');
+  const [detalle, setDetalle] = useState(false);
   const [mensajeEnviado, setMensajeEnviado] = useState(false);
 
   const opciones = [
@@ -29,6 +30,7 @@ const Turnero = () => {
     - Nombre: ${nombre}%0A
     - Celular: ${celular}%0A
     - Fecha: ${fechaFormateada}%0A
+    - Detalles: ${detalle}%0A
     - Categoría: ${categoria}`;
 
     // Número de WhatsApp
@@ -45,7 +47,8 @@ const Turnero = () => {
       setNombre('');
       setCelular('');
       setFecha('');
-      setCategoria('');
+      setCategoria('VESTIDOS LARGOS');
+      setMensajeEnviado('');
       setMensajeEnviado(false);
     }, 3000);
   };
@@ -81,8 +84,7 @@ const Turnero = () => {
   };
 
   return (
-    <div
-      className="mt-20 mb-20 max-w-lg mx-auto p-8 bg-gradient-to-r from-[#795059] via-[#9e5e63] to-[#5a2e32] shadow-xl rounded-xl">
+    <div className="mt-20 mb-20 max-w-lg mx-auto p-8 bg-gradient-to-r from-[#795059] via-[#9e5e63] to-[#5a2e32] shadow-xl rounded-xl">
       <h2 className="text-3xl font-bold mb-6 text-center text-white">
         Solicitar Turno
       </h2>
@@ -135,6 +137,8 @@ const Turnero = () => {
           Detalles
         </label> */}
         <textarea
+          value={detalle}
+          onChange={(e) => setDetalle(e.target.value)}
           placeholder="Puedes especificar el talle, color, etc."
           className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 text-gray-700 bg-white resize-none"
           rows="3"
