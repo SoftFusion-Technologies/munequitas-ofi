@@ -13,34 +13,31 @@ const MediosDeEnvio = () => {
       <h2 className="text-2xl font-semibold mb-6 text-center uppercase">
         Medios de Envío
       </h2>
-
-      <div className="flex flex-wrap justify-center space-x-6 space-y-6 sm:space-y-0">
+      <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
         {/* Correo Argentino */}
         <motion.div
-          className="flex flex-col items-center space-x-2"
-          whileHover={{ scale: 1.1 }} // Efecto de hover
-          whileTap={{ scale: 0.9 }} // Efecto de toque
+          className="flex flex-col items-center"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
           <img
             src={CorreoArgentinoLogo}
             alt="Correo Argentino"
-            className="w-20 h-20 object-contain"
+            className="w-24 h-24 object-contain"
           />
-          {/* <p className="text-lg font-medium">Correo Argentino</p> */}
         </motion.div>
 
         {/* Andreani */}
         <motion.div
-          className="flex flex-col items-center space-x-2"
+          className="flex flex-col items-center"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
           <img
             src={AndreaniLogo}
             alt="Andreani"
-            className="w-20 h-20 object-contain"
+            className="w-24 h-24 object-contain"
           />
-          {/* <p className="text-lg font-medium">Andreani</p> */}
         </motion.div>
       </div>
 

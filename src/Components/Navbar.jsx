@@ -62,7 +62,11 @@ const Navbar = () => {
                 ].map((item, idx) => (
                   <Link
                     key={idx}
-                    to={`/${item.toLowerCase().replace(' ', '-')}`}
+                    to={
+                      item === 'INICIO'
+                        ? '/'
+                        : `/${item.toLowerCase().replace(' ', '-')}`
+                    }
                     className="text-white hover:text-black px-3 py-2 rounded-md text-sm font-medium transform transition-transform duration-200 ease-in-out hover:scale-110"
                   >
                     {item}
@@ -92,7 +96,11 @@ const Navbar = () => {
           ].map((item, idx) => (
             <Link
               key={idx}
-              to={`/${item.toLowerCase().replace(' ', '-')}`}
+              to={
+                item === 'INICIO'
+                  ? '/'
+                  : `/${item.toLowerCase().replace(' ', '-')}`
+              }
               className="text-white hover:text-black block px-3 py-2 rounded-md text-base font-medium transform transition-transform duration-200 ease-in-out hover:scale-110"
             >
               {item}

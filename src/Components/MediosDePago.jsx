@@ -2,6 +2,7 @@ import { FaCcVisa, FaCcMastercard, FaCcAmex } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import VisaImage from '../Images/Tarjetas/Visa.png';
 import NaranjaImage from '../Images/Tarjetas/Naranja.jpg';
+import AmericanImage from '../Images/Tarjetas/American_Expr.png';
 import MasterImage from '../Images/Tarjetas/Master.png';
 
 const MediosDePago = () => {
@@ -16,59 +17,57 @@ const MediosDePago = () => {
         Medios de Pago
       </h2>
 
-      <div className="flex flex-wrap justify-center space-x-6 space-y-6 sm:space-y-0">
+      <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
         {/* Visa */}
         <motion.div
-          className="flex flex-col items-center space-x-2"
-          whileHover={{ scale: 1.1 }} // Efecto de hover
-          whileTap={{ scale: 0.9 }} // Efecto de toque
+          className="flex flex-col items-center"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
           <img
             src={VisaImage}
-            alt="Naranja"
-            className="w-16 h-16 object-contain"
+            alt="Visa"
+            className="w-20 h-20 object-contain"
           />
-          {/* <FaCcVisa size={40} className="text-blue-500" /> */}
-          {/* <p className="text-lg font-medium">Visa</p> */}
         </motion.div>
 
         {/* Mastercard */}
         <motion.div
-          className="flex flex-col items-center space-x-2"
+          className="flex flex-col items-center"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          {/* <FaCcMastercard size={40} className="text-red-500" /> */}
           <img
             src={MasterImage}
-            alt="Naranja"
-            className="w-16 h-16 object-contain"
+            alt="Mastercard"
+            className="w-20 h-20 object-contain"
           />
-          {/* <p className="text-lg font-medium">Mastercard</p> */}
         </motion.div>
 
         {/* American Express */}
         <motion.div
-          className="flex flex-col items-center space-x-2"
+          className="flex flex-col items-center"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <FaCcAmex size={60} className="text-green-500" />
-          {/* <p className="text-lg font-medium">American Express</p> */}
+          <img
+            src={AmericanImage}
+            alt="American Express"
+            className="w-20 h-20 object-contain"
+          />
         </motion.div>
 
         {/* Naranja */}
         <motion.div
-          className="flex flex-col items-center space-x-2"
+          className="flex flex-col items-center"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
           <img
             src={NaranjaImage}
             alt="Naranja"
-            className="w-16 h-16 object-contain"
+            className="w-20 h-20 object-contain"
           />
-          {/* <p className="text-lg font-medium">Naranja</p> */}
         </motion.div>
       </div>
 
