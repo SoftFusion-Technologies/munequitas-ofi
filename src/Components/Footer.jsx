@@ -14,7 +14,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-2">
               <li>
                 <Link
-                  to="/inicio"
+                  to="/"
                   className="hover:text-pink-300 transition-colors"
                 >
                   Inicio
