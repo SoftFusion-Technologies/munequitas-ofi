@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Importar React Router
 import Home from './Pages/Home';
 import Turnero from './Pages/Turnero';
+import Mapa from './Components/Mapa';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/turnero" element={<Turnero />}></Route>
       </Routes>
+      <Mapa></Mapa>
       <Footer />
     </Router>
   );

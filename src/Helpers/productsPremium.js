@@ -1,8 +1,8 @@
 export const products = [
   {
     id: 1,
-    imageFront: '/PerfumesDestacados/DiorSavageFront.webp',
-    imageBack: '/PerfumesDestacados/DiorSavage2.webp',
+    imageFront: '/VestidosDestacados/vestido1.jpg',
+    imageBack: '/VestidosDestacados/vestido1_2.jpg',
     imagePack: '/Packs/DiorSauvagePack.webp',
     title: 'VESTIDO 1',
     // price: '$14.500,00',
@@ -19,8 +19,8 @@ export const products = [
   },
   {
     id: 2,
-    imageFront: '/PerfumesDestacados/Chanel5Front.webp',
-    imageBack: '/PerfumesDestacados/Chanel5B2.webp',
+    imageFront: '/VestidosDestacados/vestido2.jpg',
+    imageBack: '/VestidosDestacados/vestido2_1.jpg',
     imagePack: '/Packs/ChanelNo5Pack.webp',
     title: 'VESTIDO 2',
     // price: '$14.500,00',
@@ -37,8 +37,8 @@ export const products = [
   },
   {
     id: 3,
-    imageFront: '/PerfumesDestacados/ArmaniCodeFront.webp',
-    imageBack: '/PerfumesDestacados/ArmaniCodeBack2.webp',
+    imageFront: '/VestidosDestacados/vestido3.jpg',
+    imageBack: '/VestidosDestacados/vestido3_1.jpg',
     imagePack: '/Packs/ArmaniCodePack.webp',
     title: 'VESTIDO 3',
     // price: '$14.500,00',
@@ -55,8 +55,8 @@ export const products = [
   },
   {
     id: 4,
-    imageFront: '/PerfumesDestacados/LancomeLaVieFront.webp',
-    imageBack: '/PerfumesDestacados/LancomeLaVieBack.webp',
+    imageFront: '/VestidosDestacados/vestido4.jpg',
+    imageBack: '/VestidosDestacados/vestido4_1.jpg',
     imagePack: '/Packs/LancomeLaViePack.webp',
     title: 'VESTIDO 4',
     // price: '$14.500,00',
@@ -73,8 +73,8 @@ export const products = [
   },
   {
     id: 5,
-    imageFront: '/PerfumesDestacados/VersaceErosFront.webp',
-    imageBack: '/PerfumesDestacados/VersaceErosBack.webp',
+    imageFront: '/VestidosDestacados/vestido5.jpg',
+    imageBack: '/VestidosDestacados/vestido5_1.jpg',
     imagePack: '/Packs/VersaceErosPack.webp',
     title: 'VESTIDO 5',
     // price: '$14.500,00',
@@ -91,8 +91,8 @@ export const products = [
   },
   {
     id: 6,
-    imageFront: '/PerfumesDestacados/YSLLibreFront.webp',
-    imageBack: '/PerfumesDestacados/YSLLibreBack.webp',
+    imageFront: '/VestidosDestacados/vestido6.jpg',
+    imageBack: '/VestidosDestacados/vestido6_1.jpg',
     imagePack: '/Packs/YSLLibrePack.webp',
     title: 'VESTIDO 6',
     // price: '$14.500,00',

@@ -18,7 +18,7 @@ const FeaturedProducts = () => {
         {products.map((product) => (
           <Link
             key={product.id} // Usamos el id del producto como key
-            to={`/product/${product.id}/${encodeURIComponent(product.title)}`} // Ruta dinámica con id y nombre del producto
+            // to={`/product/${product.id}/${encodeURIComponent(product.title)}`} // Ruta dinámica con id y nombre del producto
             className="border border-gray-300 rounded-lg shadow-md overflow-hidden group"
           >
             <div className="relative w-full h-64">
