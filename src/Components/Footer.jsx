@@ -13,10 +13,7 @@ const Footer = () => {
             <h3 className="font-semibold text-lg">Enlaces</h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link
-                  to="/"
-                  className="hover:text-pink-300 transition-colors"
-                >
+                <Link to="/" className="hover:text-pink-300 transition-colors">
                   Inicio
                 </Link>
               </li>
@@ -60,6 +57,22 @@ const Footer = () => {
                   Novias
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/15"
+                  className="hover:text-pink-300 transition-colors"
+                >
+                  15 Años
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/xxl"
+                  className="hover:text-pink-300 transition-colors"
+                >
+                  XXL
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -92,7 +105,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-2">
               <li>📍España 1875, Concepción Tucumán</li>
               <li>📞 +54 9 3812 06-2925</li>
-              <li>Muñequita Alquiler de Vestidos</li>
+              <li>⭐​Muñequita Alquiler de Vestidos</li>
             </ul>
           </div>
 

@@ -1,6 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Turnero = () => {
+  // Desplazar hacia la parte superior cuando el componente se monte
+  useEffect(() => {
+    window.scrollTo({
+      top: 0, // Desplazar hacia arriba de la página
+      behavior: 'smooth' // Añadir desplazamiento suave
+    });
+  }, []);
+  // Función para hacer el scroll hacia la sección
+
   const [nombre, setNombre] = useState('');
   const [celular, setCelular] = useState('');
   const [fecha, setFecha] = useState('');

@@ -56,7 +56,7 @@ export const products = [
   {
     id: 4,
     imageFront: '/VestidosDestacados/vestido4.jpg',
-    imageBack: '/VestidosDestacados/vestido4_1.jpg',
+    imageBack: '/VestidosDestacados/vestido4.jpg',
     imagePack: '/Packs/LancomeLaViePack.webp',
     title: 'VESTIDO 4',
     // price: '$14.500,00',
@@ -95,6 +95,60 @@ export const products = [
     imageBack: '/VestidosDestacados/vestido6_1.jpg',
     imagePack: '/Packs/YSLLibrePack.webp',
     title: 'VESTIDO 6',
+    // price: '$14.500,00',
+    // priceDetails: 'Precio con efectivo o transferencia: $13.000,00',
+    description: `
+      La fragancia "Libre" de Yves Saint Laurent es la máxima expresión de libertad para la mujer moderna.
+
+      - Notas de salida: Lavanda y mandarina.
+      - Notas de corazón: Flor de azahar y jazmín.
+      - Notas de fondo: Vainilla de Madagascar y almizcle.
+
+      Un aroma audaz y femenino en presentación de 100 ml.`,
+    color: null
+  },
+  {
+    id: 7,
+    imageFront: '/VestidosDestacados/vestido7.jpg',
+    imageBack: '/VestidosDestacados/vestido7_1.jpg',
+    imagePack: '/Packs/YSLLibrePack.webp',
+    title: 'VESTIDO 7',
+    // price: '$14.500,00',
+    // priceDetails: 'Precio con efectivo o transferencia: $13.000,00',
+    description: `
+      La fragancia "Libre" de Yves Saint Laurent es la máxima expresión de libertad para la mujer moderna.
+
+      - Notas de salida: Lavanda y mandarina.
+      - Notas de corazón: Flor de azahar y jazmín.
+      - Notas de fondo: Vainilla de Madagascar y almizcle.
+
+      Un aroma audaz y femenino en presentación de 100 ml.`,
+    color: null
+  },
+  {
+    id: 8,
+    imageFront: '/VestidosDestacados/vestido8.jpg',
+    imageBack: '/VestidosDestacados/vestido8_1.jpg',
+    imagePack: '/Packs/YSLLibrePack.webp',
+    title: 'VESTIDO 8',
+    // price: '$14.500,00',
+    // priceDetails: 'Precio con efectivo o transferencia: $13.000,00',
+    description: `
+      La fragancia "Libre" de Yves Saint Laurent es la máxima expresión de libertad para la mujer moderna.
+
+      - Notas de salida: Lavanda y mandarina.
+      - Notas de corazón: Flor de azahar y jazmín.
+      - Notas de fondo: Vainilla de Madagascar y almizcle.
+
+      Un aroma audaz y femenino en presentación de 100 ml.`,
+    color: null
+  },
+  {
+    id: 9,
+    imageFront: '/VestidosDestacados/vestido9.jpg',
+    imageBack: '/VestidosDestacados/vestido9_1.jpg',
+    imagePack: '/Packs/YSLLibrePack.webp',
+    title: 'VESTIDO 9',
     // price: '$14.500,00',
     // priceDetails: 'Precio con efectivo o transferencia: $13.000,00',
     description: `

@@ -5,6 +5,14 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Im
 import Home from './Pages/Home';
 import Turnero from './Pages/Turnero';
 import Mapa from './Components/Mapa';
+import Novias from './Pages/Pestañas/Novias';
+import Ofertas from './Pages/Pestañas/Ofertas';
+import Largos from './Pages/Pestañas/Largos';
+import Cortos from './Pages/Pestañas/Cortos';
+import Nenas from './Pages/Pestañas/Nenas';
+import Quince from './Pages/Pestañas/Quince';
+import XXL from './Pages/Pestañas/XXL';
+import NotFound from './Pages/NotFound';
 
 function App() {
   return (
@@ -13,6 +21,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/turnero" element={<Turnero />}></Route>
+        <Route path="/ofertas" element={<Ofertas />}></Route>
+        <Route path="/vestidos-largos" element={<Largos />}></Route>
+        <Route path="/vestidos-cortos" element={<Cortos />}></Route>
+        <Route path="/vestidos-nenas" element={<Nenas />}></Route>
+        <Route path="/novias" element={<Novias />}></Route>
+        <Route path="/quince-años" element={<Quince />}></Route>
+        <Route path="/xxl" element={<XXL />}></Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Mapa></Mapa>
       <Footer />

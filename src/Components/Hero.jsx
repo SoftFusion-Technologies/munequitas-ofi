@@ -45,7 +45,7 @@ const Hero = () => {
 
         <button
           onClick={() => navigate('/turnero')}
-          className="uppercase bg-white text-black font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out hover:bg-black hover:text-white"
+          className="uppercase bg-white text-black font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out hover:bg-rosa-pastel hover:text-white"
         >
           Solicitar Turno
         </button>

@@ -7,17 +7,17 @@ const InfoSection = () => {
 
   const items = [
     {
-      icon: <FaShippingFast className="text-pink-400 text-5xl" />,
+      icon: <FaShippingFast className="text-pink-600 text-5xl" />,
       title: 'Envíos',
       description: 'A todo el país.'
     },
     {
-      icon: <FaCreditCard className="text-pink-400 text-5xl" />,
+      icon: <FaCreditCard className="text-pink-600 text-5xl" />,
       title: 'Pagos',
       description: 'Aceptamos tarjetas, transferencia o en efectivo.'
     },
     {
-      icon: <FaWhatsapp className="text-pink-400 text-5xl" />,
+      icon: <FaWhatsapp className="text-pink-600 text-5xl" />,
       title: 'Consultas',
       description: 'Si tienes alguna duda, contáctanos al WhatsApp.'
     }

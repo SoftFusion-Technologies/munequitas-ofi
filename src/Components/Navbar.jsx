@@ -45,20 +45,26 @@ const Navbar = () => {
           <div className="flex-1 flex items-center justify-center sm:items-center sm:justify-center">
             <div className="flex-shrink-0">
               <a href="/">
-                <img src={ImgLogo} alt="Logo de Muñequita" className="h-20 -mt-2" />
+                <img
+                  src={ImgLogo}
+                  alt="Logo de Muñequita"
+                  className="h-20 -mt-2"
+                />
               </a>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden sm:block sm:ml-6">
-              <div className="flex space-x-6 justify-center">
+              <div className="flex space-x-4 justify-center">
                 {[
                   'INICIO',
                   'OFERTAS',
                   'VESTIDOS LARGOS',
                   'VESTIDOS CORTOS',
                   'VESTIDOS NENAS',
-                  'NOVIAS'
+                  'NOVIAS',
+                  'QUINCE AÑOS',
+                  'XXL'
                 ].map((item, idx) => (
                   <Link
                     key={idx}
@@ -67,7 +73,7 @@ const Navbar = () => {
                         ? '/'
                         : `/${item.toLowerCase().replace(' ', '-')}`
                     }
-                    className="text-white hover:text-black px-3 py-2 rounded-md text-sm font-medium transform transition-transform duration-200 ease-in-out hover:scale-110"
+                    className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transform transition-transform duration-200 ease-in-out hover:scale-110"
                   >
                     {item}
                   </Link>
@@ -92,7 +98,9 @@ const Navbar = () => {
             'VESTIDOS LARGOS',
             'VESTIDOS CORTOS',
             'VESTIDOS NENAS',
-            'NOVIAS'
+            'NOVIAS',
+            'QUINCE AÑOS',
+            'XXL'
           ].map((item, idx) => (
             <Link
               key={idx}
@@ -101,7 +109,7 @@ const Navbar = () => {
                   ? '/'
                   : `/${item.toLowerCase().replace(' ', '-')}`
               }
-              className="text-white hover:text-black block px-3 py-2 rounded-md text-base font-medium transform transition-transform duration-200 ease-in-out hover:scale-110"
+              className="text-white hover:text-yellow-300 block px-3 py-2 rounded-md text-base font-medium transform transition-transform duration-200 ease-in-out hover:scale-110"
             >
               {item}
             </Link>
