@@ -20,7 +20,7 @@ const XXL = () => {
 
   const handleWhatsAppClick = (nombre, precio) => {
     const phoneNumber = '3812062925'; // Número de WhatsApp
-    const message = `Hola, estoy interesado en el producto: ${nombre}, que tiene un precio de ${precio}.`;
+    const message = `Hola, estoy interesado en un producto.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
@@ -57,7 +57,7 @@ const XXL = () => {
         (producto) => producto.categoria === 'simple'
       ) && (
         <h1 className="text-center text-rosa-pastel mt-10 text-3xl font-bold sm:text-5xl mb-8 font-bignoodle">
-           XXL
+          XXL
         </h1>
       )}
       {/* Grid de productos, se adapta a 3 o 4 por fila */}

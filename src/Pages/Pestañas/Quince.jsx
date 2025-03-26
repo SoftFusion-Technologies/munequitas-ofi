@@ -20,7 +20,7 @@ const Quince = () => {
 
   const handleWhatsAppClick = (nombre, precio) => {
     const phoneNumber = '3812062925'; // Número de WhatsApp
-    const message = `Hola, estoy interesado en el producto: ${nombre}, que tiene un precio de ${precio}.`;
+    const message = `Hola, estoy interesado en un producto.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
@@ -57,7 +57,7 @@ const Quince = () => {
         (producto) => producto.categoria === 'simple'
       ) && (
         <h1 className="text-rosa-pastel mt-10 text-3xl font-bold text-center sm:text-5xl mb-8 font-bignoodle">
-           DE 15 AÑOS
+          DE 15 AÑOS
         </h1>
       )}
       {/* Grid de productos, se adapta a 3 o 4 por fila */}
