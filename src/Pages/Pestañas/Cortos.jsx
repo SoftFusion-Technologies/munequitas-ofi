@@ -40,7 +40,7 @@ const Cortos = () => {
       {/* Campo de búsqueda */}
       <div className="relative mb-8">
         {/* Input con lupa */}
-        <input
+        {/* <input
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
@@ -50,14 +50,14 @@ const Cortos = () => {
         <FontAwesomeIcon
           icon={faSearch}
           className="absolute left-3 top-1/2 transform -translate-y-1/2 text-pink-400"
-        />
+        /> */}
       </div>
 
       {filteredProductos.some(
         (producto) => producto.categoria === 'simple'
       ) && (
-        <h1 className="text-rosa-pastel mt-10 text-3xl font-bold text-left sm:text-5xl mb-8 font-bignoodle">
-          VESTIDOS CORTOS
+        <h1 className="text-rosa-pastel mt-10 text-3xl font-bold text-center sm:text-5xl mb-8 font-bignoodle">
+           CORTOS
         </h1>
       )}
       {/* Grid de productos, se adapta a 3 o 4 por fila */}
@@ -83,13 +83,13 @@ const Cortos = () => {
               />
             </div>
             <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md text-center">
-              <h3 className="text-pink-600 text-xl font-semibold">
+              {/* <h3 className="text-pink-600 text-xl font-semibold">
                 {producto.title}
               </h3>
               <p className="text-lg text-gray-600">{producto.precio}</p>
               <p className="uppercase text-xs mt-2 mb-2">
                 {producto.newPrecio}
-              </p>
+              </p> */}
 
               {/* Botón de compra con redirección a WhatsApp */}
               <button
@@ -98,7 +98,8 @@ const Cortos = () => {
                   handleWhatsAppClick(producto.title, producto.precio)
                 }
               >
-                COMPRAR
+                                COMPRAR - ALQUILAR
+
               </button>
             </div>
           </Link>

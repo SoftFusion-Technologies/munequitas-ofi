@@ -1,7 +1,7 @@
 export const xxl = [
   {
     id: 101,
-    title:"VESTIDO",
+    title: 'VESTIDO',
     precio: '$13.000,00',
     newPrecio: 'Precio con efectivo o transferencia $11.000,00',
     categoria: 'simple',
@@ -19,7 +19,7 @@ export const xxl = [
   },
   {
     id: 102,
-    title:"VESTIDO",
+    title: 'VESTIDO',
     precio: '$13.000,00',
     newPrecio: 'Precio con efectivo o transferencia $11.000,00',
     categoria: 'simple',
@@ -36,7 +36,7 @@ export const xxl = [
   },
   {
     id: 103,
-    title:"VESTIDO",
+    title: 'VESTIDO',
     precio: '$13.000,00',
     newPrecio: 'Precio con efectivo o transferencia $11.000,00',
     categoria: 'simple',
@@ -53,7 +53,7 @@ export const xxl = [
   },
   {
     id: 104,
-    title:"VESTIDO",
+    title: 'VESTIDO',
     precio: '$13.000,00',
     newPrecio: 'Precio con efectivo o transferencia $11.000,00',
     categoria: 'simple',
@@ -67,73 +67,89 @@ export const xxl = [
       - Notas de fondo: Madera de sándalo, almizcle.
 
       Fragancia clásica que destaca por su delicadeza y sofisticación.`
+  },
+  {
+    id: 105,
+    title: 'VESTIDO',
+    precio: '$13.000,00',
+    newPrecio: 'Precio con efectivo o transferencia $11.000,00',
+    categoria: 'simple',
+    imageFront: '/XXL/xxl5.jpg',
+    imageBack: '/PerfumesClasicos/CocoMademoiselleBack.webp',
+    description: `
+       "Coco Mademoiselle" de Chanel es una fragancia fresca y oriental para la mujer moderna y chic.
+
+       - Notas de salida: Naranja, bergamota.
+       - Notas de corazón: Rosa, jazmín.
+       - Notas de fondo: Pachulí, vetiver, vainilla.
+
+       Ideal para la mujer que busca un perfume elegante y lleno de energía.`
+  },
+  {
+    id: 106,
+    title: 'VESTIDO',
+    precio: '$13.000,00',
+    newPrecio: 'Precio con efectivo o transferencia $11.000,00',
+    categoria: 'simple',
+    imageFront: '/XXL/xxl6.jpg',
+    imageBack: '/PerfumesClasicos/ValentinoPourHommeBack.webp',
+    description: `
+       "Pour Homme" de Valentino es un perfume masculino con un toque de elegancia y fuerza.
+
+       - Notas de salida: Mandarina, bergamota.
+       - Notas de corazón: Rosa, lavanda.
+       - Notas de fondo: Sándalo, cuero, almizcle.
+
+       Perfecto para hombres sofisticados que buscan una fragancia duradera y refinada.`
+  },
+  {
+    id: 107,
+    title: 'VESTIDO',
+    precio: '$13.000,00',
+    newPrecio: 'Precio con efectivo o transferencia $11.000,00',
+    categoria: 'simple',
+    imageFront: '/XXL/xxl7.jpg',
+    imageBack: '/PerfumesClasicos/AquaDiGioBack.webp',
+    description: `
+       "Aqua di Gio" de Giorgio Armani es un perfume fresco y acuático, ideal para el hombre moderno.
+
+       - Notas de salida: Limón, mandarina, jazmín.
+       - Notas de corazón: Flor de romero, geranio.
+       - Notas de fondo: Almizcle, cedro.
+
+       Perfume clásico que resalta la frescura y naturalidad.`
+  },
+  {
+    id: 108,
+    title: 'VESTIDO',
+    precio: '$18.500,00',
+    newPrecio: 'Precio con efectivo o transferencia $16.500,00',
+    categoria: 'simple',
+    imageFront: '/XXL/xxl8.jpg',
+    imageBack: '/PerfumesClasicos/DolceGabbanaLightBlueBack.webp',
+    description: `
+   "Dolce & Gabbana Light Blue" es una fragancia fresca, luminosa y afrutada que captura la esencia del verano mediterráneo.
+
+   - Notas de salida: Manzana, cedro, campanilla.
+   - Notas de corazón: Jazmín, rosa blanca, bambú.
+   - Notas de fondo: Sándalo, ámbar, almizcle.
+
+   Ideal para quienes buscan un perfume refrescante y energizante que evoca la frescura del mar y el sol.`
+  },
+  {
+    id: 109,
+    title: 'VESTIDO',
+    precio: '$18.500,00',
+    newPrecio: 'Precio con efectivo o transferencia $16.500,00',
+    imageFront: '/XXL/xxl8.jpg',
+    imageBack: '/PerfumesClasicos/DolceGabbanaLightBlueBack.webp',
+    description: `
+   "Dolce & Gabbana Light Blue" es una fragancia fresca, luminosa y afrutada que captura la esencia del verano mediterráneo.
+
+   - Notas de salida: Manzana, cedro, campanilla.
+   - Notas de corazón: Jazmín, rosa blanca, bambú.
+   - Notas de fondo: Sándalo, ámbar, almizcle.
+
+   Ideal para quienes buscan un perfume refrescante y energizante que evoca la frescura del mar y el sol.`
   }
-  // {
-  //   id: 105,
-  // title:"VESTIDO",  
-  // precio: '$13.000,00',
-  //   newPrecio: 'Precio con efectivo o transferencia $11.000,00',
-  //   categoria: 'simple',
-  //   imageFront: '/XXL/xxl5.jpg',
-  //   imageBack: '/PerfumesClasicos/CocoMademoiselleBack.webp',
-  //   description: `
-  //     "Coco Mademoiselle" de Chanel es una fragancia fresca y oriental para la mujer moderna y chic.
-
-  //     - Notas de salida: Naranja, bergamota.
-  //     - Notas de corazón: Rosa, jazmín.
-  //     - Notas de fondo: Pachulí, vetiver, vainilla.
-
-  //     Ideal para la mujer que busca un perfume elegante y lleno de energía.`
-  // },
-  // {
-  //   id: 106,
-  // title:"VESTIDO",  
-  // precio: '$13.000,00',
-  //   newPrecio: 'Precio con efectivo o transferencia $11.000,00',
-  //   categoria: 'simple',
-  //   imageFront: '/XXL/xxl1.jpg',
-  //   imageBack: '/PerfumesClasicos/ValentinoPourHommeBack.webp',
-  //   description: `
-  //     "Pour Homme" de Valentino es un perfume masculino con un toque de elegancia y fuerza.
-
-  //     - Notas de salida: Mandarina, bergamota.
-  //     - Notas de corazón: Rosa, lavanda.
-  //     - Notas de fondo: Sándalo, cuero, almizcle.
-
-  //     Perfecto para hombres sofisticados que buscan una fragancia duradera y refinada.`
-  // },
-  // {
-  //   id: 107,
-  // title:"VESTIDO",  
-  // precio: '$13.000,00',
-  //   newPrecio: 'Precio con efectivo o transferencia $11.000,00',
-  //   categoria: 'simple',
-  //   imageFront: '/XXL/xxl1.jpg',
-  //   imageBack: '/PerfumesClasicos/AquaDiGioBack.webp',
-  //   description: `
-  //     "Aqua di Gio" de Giorgio Armani es un perfume fresco y acuático, ideal para el hombre moderno.
-
-  //     - Notas de salida: Limón, mandarina, jazmín.
-  //     - Notas de corazón: Flor de romero, geranio.
-  //     - Notas de fondo: Almizcle, cedro.
-
-  //     Perfume clásico que resalta la frescura y naturalidad.`
-  // },
-  // {
-  //   id: 108,
-  // title:"VESTIDO",  
-  // precio: '$18.500,00',
-  //   newPrecio: 'Precio con efectivo o transferencia $16.500,00',
-  //   categoria: 'simple',
-  //   imageFront: '/XXL/xxl1.jpg',
-  //   imageBack: '/PerfumesClasicos/DolceGabbanaLightBlueBack.webp',
-  //   description: `
-  //   "Dolce & Gabbana Light Blue" es una fragancia fresca, luminosa y afrutada que captura la esencia del verano mediterráneo.
-
-  //   - Notas de salida: Manzana, cedro, campanilla.
-  //   - Notas de corazón: Jazmín, rosa blanca, bambú.
-  //   - Notas de fondo: Sándalo, ámbar, almizcle.
-
-  //   Ideal para quienes buscan un perfume refrescante y energizante que evoca la frescura del mar y el sol.`
-  // }
 ];

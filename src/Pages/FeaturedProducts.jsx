@@ -34,11 +34,11 @@ const FeaturedProducts = () => {
                   className="w-full h-full object-cover opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
                 />
               </div>
-              <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md">
-                <h3 className="text-pink-600 text-xl font-semibold font-bignoodle text-center">
-                  {product.title}
-                </h3>
-              </div>
+              {/* <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md">
+                  <h3 className="text-pink-600 text-xl font-semibold font-bignoodle text-center">
+                    {product.title}
+                  </h3>
+              </div> */}
             </a>
           );
         })}
