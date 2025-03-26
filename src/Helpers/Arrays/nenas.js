@@ -1,139 +1,170 @@
 export const nenas = [
   {
     id: 101,
-    title:"VESTIDO",
-    precio: '$13.000,00',
-    newPrecio: 'Precio con efectivo o transferencia $11.000,00',
+    title: 'VESTIDO',
     categoria: 'simple',
-    imageFront: '/Nenas/nenas1.jpg',
-    imageBack: '/PerfumesClasicos/GuiltyPourFemmeBack.webp',
-    imagePack: '/Packs/rooppack.webp',
-    description: `
-      "Guilty Pour Femme" de Gucci es un perfume floral y especiado para mujeres que aman lo audaz.
-
-      - Notas de salida: Mandarina, pimienta rosa.
-      - Notas de corazón: Geranio, durazno, ciruela.
-      - Notas de fondo: Ámbar, pachulí, vainilla.
-
-      Perfume sensual y misterioso, para usar de día o de noche.`
+    imageFront: '/Nenas/nenas1.jpg'
   },
   {
     id: 102,
-    title:"VESTIDO",
-    precio: '$13.000,00',
-    newPrecio: 'Precio con efectivo o transferencia $11.000,00',
+    title: 'VESTIDO',
     categoria: 'simple',
-    imageFront: '/Nenas/nenas2.jpg',
-    imageBack: '/PerfumesClasicos/TomFordBlackOrchidBack.webp',
-    description: `
-      "Tom Ford Black Orchid" es un perfume misterioso y profundo, ideal para la mujer audaz.
-
-      - Notas de salida: Trufa, grosella negra.
-      - Notas de corazón: Orquídea, loto, especias.
-      - Notas de fondo: Pachulí, incienso, vainilla.
-
-      Un clásico moderno que destaca por su intensidad y sofisticación.`
+    imageFront: '/Nenas/nenas2.jpg'
   },
   {
     id: 103,
-    title:"VESTIDO",
-    precio: '$13.000,00',
-    newPrecio: 'Precio con efectivo o transferencia $11.000,00',
+    title: 'VESTIDO',
     categoria: 'simple',
-    imageFront: '/Nenas/nenas3.jpg',
-    imageBack: '/PerfumesClasicos/LancomeLaVieEstBelleBack.webp',
-    description: `
-      "La Vie Est Belle" de Lancôme es un perfume dulce y floral, perfecto para cualquier ocasión.
-
-      - Notas de salida: Pera, grosella negra.
-      - Notas de corazón: Iris, jazmín.
-      - Notas de fondo: Pachulí, praliné.
-
-      Ideal para mujeres felices que desean compartir su optimismo.`
+    imageFront: '/Nenas/nenas3.jpg'
   },
   {
     id: 104,
-    title:"VESTIDO",
-    precio: '$13.000,00',
-    newPrecio: 'Precio con efectivo o transferencia $11.000,00',
+    title: 'VESTIDO',
     categoria: 'simple',
-    imageFront: '/Nenas/nenas4.jpg',
-    imageBack: '/PerfumesClasicos/JadoreDiorBack.webp',
-    description: `
-      "J'adore" de Dior es una fragancia femenina floral y elegante, perfecta para la mujer que se siente única.
-
-      - Notas de salida: Mandarina, melón, flor de azahar.
-      - Notas de corazón: Rosa, jazmín, lirio de los valles.
-      - Notas de fondo: Madera de sándalo, almizcle.
-
-      Fragancia clásica que destaca por su delicadeza y sofisticación.`
+    imageFront: '/Nenas/nenas4.jpg'
+  },
+  {
+    id: 105,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas5.jpg'
+  },
+  {
+    id: 106,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas6.jpg'
+  },
+  {
+    id: 107,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas7.jpg'
+  },
+  {
+    id: 108,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas8.jpg'
+  },
+  {
+    id: 109,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas9.jpg'
+  },
+  {
+    id: 110,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas10.jpg'
+  },
+  {
+    id: 111,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas11.jpg'
+  },
+  {
+    id: 112,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas12.jpg'
+  },
+  {
+    id: 113,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas13.jpg'
+  },
+  {
+    id: 114,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas14.jpg'
+  },
+  {
+    id: 115,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas15.jpg'
+  },
+  {
+    id: 116,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas16.jpg'
+  },
+  {
+    id: 117,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas17.jpg'
+  },
+  {
+    id: 118,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas18.jpg'
+  },
+  {
+    id: 119,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas19.jpg'
+  },
+  {
+    id: 120,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas20.jpg'
+  },
+  {
+    id: 121,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas21.jpg'
+  },
+  {
+    id: 122,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas22.jpg'
+  },
+  {
+    id: 123,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas23.jpg'
+  },
+  {
+    id: 124,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas24.jpg'
+  },
+  {
+    id: 125,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas25.jpg'
+  },
+  {
+    id: 126,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas26.jpg'
+  },
+  {
+    id: 127,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas27.jpg'
+  },
+  {
+    id: 128,
+    title: 'VESTIDO',
+    categoria: 'simple',
+    imageFront: '/Nenas/nenas28.jpg'
   }
-  // {
-  //   id: 105,
-  // title:"VESTIDO",  
-  // precio: '$13.000,00',
-  //   newPrecio: 'Precio con efectivo o transferencia $11.000,00',
-  //   categoria: 'simple',
-  //   imageFront: '/Nenas/nenas5.jpg',
-  //   imageBack: '/PerfumesClasicos/CocoMademoiselleBack.webp',
-  //   description: `
-  //     "Coco Mademoiselle" de Chanel es una fragancia fresca y oriental para la mujer moderna y chic.
-
-  //     - Notas de salida: Naranja, bergamota.
-  //     - Notas de corazón: Rosa, jazmín.
-  //     - Notas de fondo: Pachulí, vetiver, vainilla.
-
-  //     Ideal para la mujer que busca un perfume elegante y lleno de energía.`
-  // },
-  // {
-  //   id: 106,
-  // title:"VESTIDO",  
-  // precio: '$13.000,00',
-  //   newPrecio: 'Precio con efectivo o transferencia $11.000,00',
-  //   categoria: 'simple',
-  //   imageFront: '/Nenas/nenas1.jpg',
-  //   imageBack: '/PerfumesClasicos/ValentinoPourHommeBack.webp',
-  //   description: `
-  //     "Pour Homme" de Valentino es un perfume masculino con un toque de elegancia y fuerza.
-
-  //     - Notas de salida: Mandarina, bergamota.
-  //     - Notas de corazón: Rosa, lavanda.
-  //     - Notas de fondo: Sándalo, cuero, almizcle.
-
-  //     Perfecto para hombres sofisticados que buscan una fragancia duradera y refinada.`
-  // },
-  // {
-  //   id: 107,
-  // title:"VESTIDO",  
-  // precio: '$13.000,00',
-  //   newPrecio: 'Precio con efectivo o transferencia $11.000,00',
-  //   categoria: 'simple',
-  //   imageFront: '/Nenas/nenas1.jpg',
-  //   imageBack: '/PerfumesClasicos/AquaDiGioBack.webp',
-  //   description: `
-  //     "Aqua di Gio" de Giorgio Armani es un perfume fresco y acuático, ideal para el hombre moderno.
-
-  //     - Notas de salida: Limón, mandarina, jazmín.
-  //     - Notas de corazón: Flor de romero, geranio.
-  //     - Notas de fondo: Almizcle, cedro.
-
-  //     Perfume clásico que resalta la frescura y naturalidad.`
-  // },
-  // {
-  //   id: 108,
-  // title:"VESTIDO",  
-  // precio: '$18.500,00',
-  //   newPrecio: 'Precio con efectivo o transferencia $16.500,00',
-  //   categoria: 'simple',
-  //   imageFront: '/Nenas/nenas1.jpg',
-  //   imageBack: '/PerfumesClasicos/DolceGabbanaLightBlueBack.webp',
-  //   description: `
-  //   "Dolce & Gabbana Light Blue" es una fragancia fresca, luminosa y afrutada que captura la esencia del verano mediterráneo.
-
-  //   - Notas de salida: Manzana, cedro, campanilla.
-  //   - Notas de corazón: Jazmín, rosa blanca, bambú.
-  //   - Notas de fondo: Sándalo, ámbar, almizcle.
-
-  //   Ideal para quienes buscan un perfume refrescante y energizante que evoca la frescura del mar y el sol.`
-  // }
 ];
