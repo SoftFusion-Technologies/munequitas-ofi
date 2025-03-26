@@ -10,7 +10,7 @@ const FeaturedProducts = () => {
         {products.map((product) => {
           // Mensaje prellenado para WhatsApp
           const message = encodeURIComponent(
-            `Hola! Estoy interesado en el vestido "${product.title}". ¿Podrías darme más información?`
+            `Hola! Estoy interesado en un vestido.`
           );
           const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
