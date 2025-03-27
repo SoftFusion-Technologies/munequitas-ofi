@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'; // Importar Link
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import ProductNotFound from '../../Components/ProductNotFound.jsx';
-import { novias } from '../../Helpers/Arrays/novias.js';
+import { quince } from '../../Helpers/Arrays/quince.js';
 
 const Quince = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
@@ -28,7 +28,7 @@ const Quince = () => {
   };
   // Filtrar productos basados en el término de búsqueda
 
-  const filteredProductos = novias.filter((producto) =>
+  const filteredProductos = quince.filter((producto) =>
     producto.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
