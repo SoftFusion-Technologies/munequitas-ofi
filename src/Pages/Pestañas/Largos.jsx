@@ -57,7 +57,7 @@ const Largos = () => {
         (producto) => producto.categoria === 'simple'
       ) && (
         <h1 className="text-rosa-pastel mt-10 text-3xl font-bold text-center sm:text-5xl mb-8 font-bignoodle">
-           LARGOS
+          LARGOS
         </h1>
       )}
       {/* Grid de productos, se adapta a 3 o 4 por fila */}
@@ -86,11 +86,12 @@ const Largos = () => {
               {/* <h3 className="text-pink-600 text-xl font-semibold">
                 {producto.title}
               </h3>
-              <p className="text-lg text-gray-600">{producto.precio}</p>
               <p className="uppercase text-xs mt-2 mb-2">
                 {producto.newPrecio}
               </p> */}
 
+              <p className="text-lg text-gray-600">{producto.precio}</p>
+                
               {/* Botón de compra con redirección a WhatsApp */}
               <button
                 className="bg-rosa-pastel hover:bg-pink-900 text-white font-bold py-2 px-4 rounded-lg mt-2 transition"

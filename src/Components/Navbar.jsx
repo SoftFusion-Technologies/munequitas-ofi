@@ -54,7 +54,7 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden sm:block sm:ml-6">
+            <div className="hidden sm:block sm:ml-5">
               <div className="flex space-x-4 justify-center">
                 {[
                   'INICIO',

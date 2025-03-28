@@ -90,6 +90,7 @@ const Nenas = () => {
               <p className="uppercase text-xs mt-2 mb-2">
                 {producto.newPrecio}
               </p> */}
+              <p className="text-lg text-gray-600">{producto.precio}</p>
 
               {/* Botón de compra con redirección a WhatsApp */}
               <button

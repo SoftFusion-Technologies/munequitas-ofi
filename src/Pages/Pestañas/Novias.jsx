@@ -91,6 +91,8 @@ const Novias = () => {
                 {producto.newPrecio}
               </p> */}
 
+              <p className="text-lg text-gray-600">{producto.precio}</p>
+
               {/* Botón de compra con redirección a WhatsApp */}
               <button
                 className="bg-rosa-pastel hover:bg-pink-900 text-white font-bold py-2 px-4 rounded-lg mt-2 transition"
