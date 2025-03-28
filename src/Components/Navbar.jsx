@@ -64,7 +64,8 @@ const Navbar = () => {
                   'VESTIDOS NENAS',
                   'NOVIAS',
                   'QUINCE AÑOS',
-                  'XXL'
+                  'XXL',
+                  'TOP_FALDA'
                 ].map((item, idx) => (
                   <Link
                     key={idx}
@@ -100,7 +101,8 @@ const Navbar = () => {
             'VESTIDOS NENAS',
             'NOVIAS',
             'QUINCE AÑOS',
-            'XXL'
+            'XXL',
+            'TOP_FALDA'
           ].map((item, idx) => (
             <Link
               key={idx}

@@ -13,6 +13,7 @@ import Nenas from './Pages/Pestañas/Nenas';
 import Quince from './Pages/Pestañas/Quince';
 import XXL from './Pages/Pestañas/XXL';
 import NotFound from './Pages/NotFound';
+import Top from './Pages/Pestañas/Top';
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
         <Route path="/novias" element={<Novias />}></Route>
         <Route path="/quince-años" element={<Quince />}></Route>
         <Route path="/xxl" element={<XXL />}></Route>
+        <Route
+          path="/top_falda"
+          element={<Top />}
+        ></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Mapa></Mapa>
