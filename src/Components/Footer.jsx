@@ -4,23 +4,26 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-[#795059] to-[#c48d8a] text-white py-8 mt-auto">
+    <footer className="bg-rosa-pastel text-white py-8 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {/* Sección de enlaces */}
 
           <div>
-            <h3 className="font-semibold text-lg">Enlaces</h3>
+            <h3 className="font-semibold text-lg text-pink-700">Enlaces</h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link to="/" className="hover:text-pink-300 transition-colors">
+                <Link
+                  to="/"
+                  className="hover:text-pink-700 font-bold transition-colors"
+                >
                   Inicio
                 </Link>
               </li>
               <li>
                 <Link
                   to="/ofertas"
-                  className="hover:text-pink-300 transition-colors"
+                  className="hover:text-pink-700 font-bold transition-colors"
                 >
                   Ofertas
                 </Link>
@@ -28,7 +31,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/vestidos-largos"
-                  className="hover:text-pink-300 transition-colors"
+                  className="hover:text-pink-700 font-bold transition-colors"
                 >
                   Vestidos Largos
                 </Link>
@@ -36,7 +39,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/vestidos-cortos"
-                  className="hover:text-pink-300 transition-colors"
+                  className="hover:text-pink-700 font-bold transition-colors"
                 >
                   Vestidos Cortos
                 </Link>
@@ -44,7 +47,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/vestidosnena"
-                  className="hover:text-pink-300 transition-colors"
+                  className="hover:text-pink-700 font-bold transition-colors"
                 >
                   Vestido Nenas
                 </Link>
@@ -52,7 +55,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/novias"
-                  className="hover:text-pink-300 transition-colors"
+                  className="hover:text-pink-700 font-bold transition-colors"
                 >
                   Novias
                 </Link>
@@ -60,7 +63,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/15"
-                  className="hover:text-pink-300 transition-colors"
+                  className="hover:text-pink-700 font-bold transition-colors"
                 >
                   15 Años
                 </Link>
@@ -68,7 +71,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/xxl"
-                  className="hover:text-pink-300 transition-colors"
+                  className="hover:text-pink-700 font-bold transition-colors"
                 >
                   XXL
                 </Link>
@@ -78,13 +81,13 @@ const Footer = () => {
 
           {/* Sección de redes sociales */}
           <div>
-            <h3 className="font-semibold text-lg">Síguenos</h3>
+            <h3 className="font-semibold text-lg text-pink-700">Síguenos</h3>
             <div className="mt-4 flex space-x-4">
               <a
                 href="https://www.facebook.com/profile.php?id=100060438833647&locale=es_LA"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-pink-300"
+                className="hover:text-pink-700 font-bold"
               >
                 <i className="fab fa-facebook-f text-xl"></i>
               </a>
@@ -92,7 +95,7 @@ const Footer = () => {
                 href="https://www.instagram.com/munequitaalquiler/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-pink-300"
+                className="hover:text-pink-700 font-bold"
               >
                 <i className="fab fa-instagram text-xl"></i>
               </a>
@@ -101,7 +104,7 @@ const Footer = () => {
 
           {/* Sección de información de contacto */}
           <div>
-            <h3 className="font-semibold text-lg">Contacto</h3>
+            <h3 className="font-semibold text-lg text-pink-700">Contacto</h3>
             <ul className="mt-4 space-y-2">
               <li>📍España 1875, Concepción Tucumán</li>
               <li>📞 +54 9 3812 06-2925</li>
@@ -111,7 +114,7 @@ const Footer = () => {
 
           {/* Sección de derechos */}
           <div>
-            <h3 className="font-semibold text-lg">Derechos</h3>
+            <h3 className="font-semibold text-lg text-pink-700">Derechos</h3>
             <p className="mt-4 text-sm">
               &copy; 2025 Muñequita Alquiler. Todos los derechos reservados.
             </p>

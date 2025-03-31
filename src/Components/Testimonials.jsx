@@ -63,7 +63,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-[#795059] via-[#9e5e63] to-[#5a2e32] py-12 px-4 sm:px-8 lg:px-16">
+    <div className="bg-rosa-pastel   from-[#795059] via-[#9e5e63] to-[#5a2e32] py-12 px-4 sm:px-8 lg:px-16">
       <h2 className="font-bignoodle text-center text-3xl sm:text-4xl font-extrabold text-white uppercase mb-8">
         Lo que dicen nuestros clientes
       </h2>

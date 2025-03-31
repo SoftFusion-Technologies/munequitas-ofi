@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'rosa-pastel': '#b06576', // Rosa pastel más fuerte
+        'rosa-pastel': '#F3AACB', // Rosa pastel más fuerte
         'celeste-pastel': '#A7D8E7',
         'lavanda-pastel': '#E2D1F9',
         'verde-menta': '#A7E6D2',

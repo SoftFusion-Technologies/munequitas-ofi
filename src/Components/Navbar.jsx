@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-[#795059] via-[#9e5e63] to-[#5a2e32] shadow-lg">
+    <nav className="bg-rosa-pastel shadow-lg">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-center h-16">
           {/* Button for mobile menu */}
@@ -74,7 +74,7 @@ const Navbar = () => {
                         ? '/'
                         : `/${item.toLowerCase().replace(' ', '-')}`
                     }
-                    className="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium transform transition-transform duration-200 ease-in-out hover:scale-110"
+                    className="text-white hover:text-pink-700  px-3 py-2 rounded-md text-sm font-medium transform transition-transform duration-200 ease-in-out hover:scale-110"
                   >
                     {item}
                   </Link>
@@ -111,7 +111,7 @@ const Navbar = () => {
                   ? '/'
                   : `/${item.toLowerCase().replace(' ', '-')}`
               }
-              className="text-white hover:text-yellow-300 block px-3 py-2 rounded-md text-base font-medium transform transition-transform duration-200 ease-in-out hover:scale-110"
+              className="text-white hover:text-pink-700  block px-3 py-2 rounded-md text-base font-medium transform transition-transform duration-200 ease-in-out hover:scale-110"
             >
               {item}
             </Link>
