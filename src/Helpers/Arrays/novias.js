@@ -1,4 +1,4 @@
-export const novias = Array.from({ length: 35 }, (_, i) => ({
+export const novias = Array.from({ length: 32 }, (_, i) => ({
   id: 101 + i,
   title: 'VESTIDO novias',
   categoria: 'simple',
