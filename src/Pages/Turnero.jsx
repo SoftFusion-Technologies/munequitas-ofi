@@ -43,7 +43,7 @@ const Turnero = () => {
     - Categoría: ${categoria}`;
 
     // Número de WhatsApp
-    const telefono = '3812062925';
+    const telefono = '+5493812062925';
 
     // Abrir WhatsApp en una nueva ventana
     window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
