@@ -22,17 +22,21 @@ const FeaturedProducts = () => {
               rel="noopener noreferrer"
               className="relative border border-gray-300 rounded-xl shadow-lg overflow-hidden group bg-gradient-to-b from-green-100 to-blue-50"
             >
-              <div className="relative w-full h-80 bg-white bg-opacity-80 backdrop-blur-md rounded-t-lg">
-                <img
-                  src={product.imageFront}
-                  alt={`${product.title} frente`}
-                  className="w-full h-full object-cover opacity-100 group-hover:opacity-0 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
-                />
-                <img
-                  src={product.imageBack}
-                  alt={`${product.title} espalda`}
-                  className="w-full h-full object-cover opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
-                />
+              <div className="relative w-full min-h-[400px] sm:h-auto bg-white bg-opacity-80 backdrop-blur-md rounded-t-lg">
+                <div className="relative w-full aspect-[3/4] overflow-hidden">
+                  <img
+                    src={product.imageFront}
+                    alt={product.title}
+                    className="w-full h-full object-contain opacity-100 group-hover:opacity-0 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
+                  />
+                  {product.imageBack && (
+                    <img
+                      src={product.imageBack}
+                      alt={`${product.title} espalda`}
+                      className="w-full h-full object-contain opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
+                    />
+                  )}
+                </div>
               </div>
               {/* <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md">
                   <h3 className="text-pink-600 text-xl font-semibold font-bignoodle text-center">
