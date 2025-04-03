@@ -62,11 +62,13 @@ const Turnero = () => {
     }, 3000);
   };
 
-  // Función para verificar si el día es martes, miércoles o jueves
+  // Función para verificar si el día es martes, miércoles, jueves o viernes
   const esDiaHabil = (dateString) => {
     const date = new Date(`${dateString}T00:00:00`);
     const diaSemana = date.getDay(); // 0 = Domingo, 1 = Lunes, ..., 6 = Sábado
-    return diaSemana === 2 || diaSemana === 3 || diaSemana === 4; // Martes (2), Miércoles (3), Jueves (4)
+    return (
+      diaSemana === 2 || diaSemana === 3 || diaSemana === 4 || diaSemana === 5
+    ); // Martes (2), Miércoles (3), Jueves (4), Viernes (5)
   };
 
   // Función para avanzar al próximo día habil
@@ -86,7 +88,7 @@ const Turnero = () => {
     if (esDiaHabil(nuevaFecha)) {
       setFecha(nuevaFecha);
     } else {
-      alert('Solo puedes seleccionar martes, miércoles o jueves.');
+      alert('Solo puedes seleccionar martes, miércoles, jueves o viernes.');
       const nuevoDiaHabil = obtenerProximoDiaHabil(nuevaFecha);
       setFecha(nuevoDiaHabil); // Ajustar al próximo día habil
     }
