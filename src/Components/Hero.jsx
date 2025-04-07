@@ -16,7 +16,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative h-screen bg-cover bg-center"
+      className="relative h-auto lg:h-screen p-20 sm:p-40 lg:p-0 bg-cover bg-[position:right_-130px_top] lg:bg-center bg-container"
       style={{ backgroundImage: `url(${ImgHero1})` }}
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>{' '}

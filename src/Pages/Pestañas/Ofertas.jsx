@@ -5,6 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import ProductNotFound from '../../Components/ProductNotFound.jsx';
 import { ofertas } from '../../Helpers/Arrays/ofertas.js';
+import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const Ofertas = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
@@ -54,39 +58,69 @@ const Ofertas = () => {
       </div>
 
       {filteredProductos.some(
-        (producto) => producto.categoria === 'simple'
+        (producto) => producto.categoria === "simple"
       ) && (
         <h1 className="text-rosa-pastel mt-10 text-3xl font-bold text-center sm:text-5xl mb-8 font-bignoodle">
-          OFERTAS
+          REMATES
         </h1>
       )}
       {/* Grid de productos, se adapta a 3 o 4 por fila */}
       {/* Grid de productos, adaptable a diferentes tamaños */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {filteredProductos.map((producto) => (
+        {filteredProductos.map((producto, index) => (
           <Link
             key={producto.id}
             // to={`/product/${producto.id}/${encodeURIComponent(producto.title)}`}
-            className="relative border border-gray-300 rounded-xl shadow-lg overflow-hidden group bg-gradient-to-b from-green-100 to-blue-50 hover:shadow-2xl transition"
+            className="relative border border-gray-200 rounded-xl shadow-md overflow-hidden group bg-white hover:shadow-xl transition-transform transform hover:scale-105"
           >
             <div className="relative w-full min-h-[400px] sm:h-auto bg-white bg-opacity-80 backdrop-blur-md rounded-t-lg">
               <div className="relative w-full aspect-[3/4] overflow-hidden">
-                <img
-                  src={producto.imageFront}
-                  alt={producto.title}
-                  className="w-full h-full object-contain opacity-100 group-hover:opacity-0 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
-                />
-                {producto.imageFront && (
-                  <img
-                    src={producto.imageFront}
-                    alt={`${producto.title} espalda`}
-                    className="w-full h-full object-contain opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
-                  />
+                {producto.images && producto.images.length >= 1 ? (
+                  <Swiper
+                    modules={[Navigation]}
+                    navigation={true}
+                    slidesPerView={1}
+                    className="h-full"
+                  >
+                    {/* Mostramos la imagen frontal primero */}
+                    <SwiperSlide>
+                      <img
+                        src={producto.imageFront}
+                        alt={producto.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </SwiperSlide>
+                    {/* Luego mostramos el resto de imágenes del array */}
+                    {producto.images.map((image, index) => (
+                      <SwiperSlide key={index}>
+                        <img
+                          src={image}
+                          alt={`${producto.title} - imagen ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <>
+                    <img
+                      src={producto.imageFront}
+                      alt={producto.title}
+                      className="w-full h-full object-cover opacity-100 group-hover:opacity-0 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
+                    />
+                    {producto.imageFront && (
+                      <img
+                        src={producto.imageFront}
+                        alt={`${producto.title} espalda`}
+                        className="w-full h-full object-contain opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
+                      />
+                    )}
+                  </>
                 )}
               </div>
             </div>
             <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md text-center">
-              {/* <h3 className="text-pink-600 text-xl font-semibold">
+            {/* <h3 className="text-pink-600 text-xl font-semibold">
                 {producto.title}
               </h3>
               <p className="text-lg text-gray-600">{producto.precio}</p>
@@ -95,13 +129,22 @@ const Ofertas = () => {
               </p> */}
 
               {/* Botón de compra con redirección a WhatsApp */}
+              <p className="text-gray-400 text-sm mb-1">Producto {index + 1}</p>
+
               <button
                 className="bg-rosa-pastel hover:bg-pink-900 text-white font-bold py-2 px-4 rounded-lg mt-2 transition"
-                onClick={() =>
-                  handleWhatsAppClick(producto.title, producto.precio)
-                }
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleWhatsAppClick(producto.title, producto.precio);
+                }}
               >
-                COMPRAR - ALQUILAR
+                COMPRAR{" "}
+                {producto.precio !== "0"
+                  ? `$${Number(producto.precio).toLocaleString("es-AR", {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}`
+                  : ""}
               </button>
             </div>
           </Link>

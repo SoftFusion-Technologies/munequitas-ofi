@@ -84,7 +84,6 @@ const Turnero = () => {
 
   const handleChangeFecha = (e) => {
     const nuevaFecha = e.target.value;
-
     if (esDiaHabil(nuevaFecha)) {
       setFecha(nuevaFecha);
     } else {
@@ -127,6 +126,7 @@ const Turnero = () => {
           value={fecha}
           onChange={handleChangeFecha}
           className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 text-gray-700 bg-white cursor-pointer"
+          min={new Date().toISOString().split("T")[0]} // Fecha mínima: hoy
         />
       </div>
 
@@ -169,6 +169,17 @@ const Turnero = () => {
           ✅ ¡Mensaje enviado con éxito!
         </p>
       )}
+
+      <div className="mt-6">
+        <p className="text-center text-white font-medium text-sm sm:text-base">
+          En caso de no poder solicitar tu turno, podés acudir en los siguientes
+          días y horarios:
+          <span className="block font-semibold mt-1">
+            Martes, miércoles, jueves y viernes — 9:00 a 13:00 hs y 17:00 a
+            21:00 hs
+          </span>
+        </p>
+      </div>
     </div>
   );
 };

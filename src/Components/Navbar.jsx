@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-center h-16">
           {/* Botón para menú móvil */}
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <div className="absolute inset-y-0 left-0 flex items-center xl:hidden">
             <button
               onClick={toggleMenu}
               type="button"
@@ -72,7 +72,7 @@ const Navbar = () => {
             </div>
 
             {/* Menú de escritorio */}
-            <div className="hidden sm:block sm:ml-5">
+            <div className="hidden xl:block xl:ml-5">
               <div className="flex space-x-2 justify-center">
                 {menuItems.map((item, idx) => (
                   <Link
@@ -93,7 +93,7 @@ const Navbar = () => {
       <div
         className={`${
           isOpen ? 'block' : 'hidden'
-        } sm:hidden transition-all duration-300 ease-in-out`}
+        } xl:hidden transition-all duration-300 ease-in-out`}
         id="mobile-menu"
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
