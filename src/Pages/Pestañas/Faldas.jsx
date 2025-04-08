@@ -79,7 +79,7 @@ const Faldas = () => {
                 <img
                   src={producto.imageFront}
                   alt={`${producto.title} espalda`}
-                  className="w-full h-full object-cover opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-500 ease-in-out"
+                  className="w-full h-full object-contain opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
                 />
               )}
             </div>
@@ -87,12 +87,12 @@ const Faldas = () => {
             {/* Content container with fixed height */}
             <div className="p-4 bg-white flex-grow flex flex-col justify-between">
               <div className="text-center">
+                <p className="text-gray-400 text-sm mt-2">
+                  Producto {index + 1}
+                </p>
                 <p className="text-base text-gray-600 font-medium">
                   Faldas amplias $110.000 - Polleras amplias $200.000 - Otras
                   $70.000
-                </p>
-                <p className="text-gray-400 text-sm mt-2">
-                  Producto {index + 1}
                 </p>
               </div>
 

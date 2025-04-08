@@ -94,8 +94,8 @@ const Tops = () => {
                 {producto.newPrecio}
               </p> */}
 
-              <p className="text-lg text-gray-600">{producto.precio}</p>
               <p className="text-gray-400 text-sm mb-1">Producto {index + 1}</p>
+              <p className="text-lg text-gray-600">{producto.precio}</p>
               <p className="mt-2 text-lg text-black">{producto.descripcion}</p>
 
               {/* Botón de compra con redirección a WhatsApp */}
