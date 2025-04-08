@@ -95,7 +95,7 @@ export const ofertas = (() => {
     if (index <= precios.length) {
       return precios[index - 1];
     } else {
-      return precios[precios.length - 1] || "12000"; // Valor por defecto si no hay precios
+      return precios[precios.length - 1] || "0"; // Valor por defecto si no hay precios
     }
   };
 

@@ -54,53 +54,50 @@ const Faldas = () => {
       </div>
 
       {filteredProductos.some(
-        (producto) => producto.categoria === 'simple'
+        (producto) => producto.categoria === "simple"
       ) && (
-        <h1 className="text-center text-rosa-pastel mt-10 text-3xl font-bold sm:text-5xl mb-8 font-bignoodle">
+        <h1 className="text-center text-rosa-pastel mt-10 text-xl font-bold sm:text-5xl mb-8 font-bignoodle">
           Faldas
         </h1>
       )}
       {/* Grid de productos, se adapta a 3 o 4 por fila */}
       {/* Grid de productos, adaptable a diferentes tamaños */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {filteredProductos.map((producto) => (
-          <Link
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {filteredProductos.map((producto, index) => (
+          <div
             key={producto.id}
-            // to={`/product/${producto.id}/${encodeURIComponent(producto.title)}`}
-            className="relative border border-gray-300 rounded-xl shadow-lg overflow-hidden group bg-gradient-to-b from-green-100 to-blue-50 hover:shadow-2xl transition"
+            className="flex flex-col h-full border border-gray-200 rounded-xl shadow-md overflow-hidden group bg-white hover:shadow-xl transition-transform transform hover:scale-105"
           >
-            <div className="relative w-full min-h-[400px] sm:h-auto bg-white bg-opacity-80 backdrop-blur-md rounded-t-lg">
-              <div className="relative w-full aspect-[3/4] overflow-hidden">
+            {/* Fixed height image container */}
+            <div className="relative w-full h-96 overflow-hidden">
+              <img
+                src={producto.imageFront}
+                alt={producto.title}
+                className="w-full h-full object-cover opacity-100 group-hover:opacity-0 absolute top-0 left-0 transition-opacity duration-500 ease-in-out"
+              />
+              {producto.imageFront && (
                 <img
                   src={producto.imageFront}
-                  alt={producto.title}
-                  className="w-full h-full object-contain opacity-100 group-hover:opacity-0 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
+                  alt={`${producto.title} espalda`}
+                  className="w-full h-full object-cover opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-500 ease-in-out"
                 />
-                {producto.imageFront && (
-                  <img
-                    src={producto.imageFront}
-                    alt={`${producto.title} espalda`}
-                    className="w-full h-full object-contain opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
-                  />
-                )}
-              </div>
+              )}
             </div>
-            <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md text-center">
-              {/* <h3 className="text-pink-600 text-xl font-semibold">
-                {producto.title}
-              </h3>
-              <p className="text-lg text-gray-600">{producto.precio}</p>
-              <p className="uppercase text-xs mt-2 mb-2">
-                {producto.newPrecio}
-              </p> */}
 
-              <p className="text-lg text-gray-600">{producto.precio}</p>
+            {/* Content container with fixed height */}
+            <div className="p-4 bg-white flex-grow flex flex-col justify-between">
+              <div className="text-center">
+                <p className="text-base text-gray-600 font-medium">
+                  Faldas amplias $110.000 - Polleras amplias $200.000 - Otras
+                  $70.000
+                </p>
+                <p className="text-gray-400 text-sm mt-2">
+                  Producto {index + 1}
+                </p>
+              </div>
 
-              <p className="mt-2 text-lg text-black">{producto.descripcion}</p>
-
-              {/* Botón de compra con redirección a WhatsApp */}
               <button
-                className="bg-rosa-pastel hover:bg-pink-900 text-white font-bold py-2 px-4 rounded-lg mt-2 transition"
+                className="w-full bg-pink-300 hover:bg-pink-400 text-white font-bold py-2 px-4 rounded-lg mt-4 transition"
                 onClick={() =>
                   handleWhatsAppClick(producto.title, producto.precio)
                 }
@@ -108,7 +105,7 @@ const Faldas = () => {
                 COMPRAR - ALQUILAR
               </button>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
 
