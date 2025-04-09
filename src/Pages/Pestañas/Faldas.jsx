@@ -1,30 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import '../../Styles/Productos.css';
-import { Link } from 'react-router-dom'; // Importar Link
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import ProductNotFound from '../../Components/ProductNotFound.jsx';
-import { faldas } from '../../Helpers/Arrays/faldas.js';
+import React, { useEffect, useState } from "react";
+import "../../Styles/Productos.css";
+import { Link } from "react-router-dom"; // Importar Link
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import ProductNotFound from "../../Components/ProductNotFound.jsx";
+import { faldas } from "../../Helpers/Arrays/faldas.js";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const Faldas = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
   useEffect(() => {
     window.scrollTo({
       top: 0, // Desplazar hacia arriba de la página
-      behavior: 'smooth' // Añadir desplazamiento suave
+      behavior: "smooth", // Añadir desplazamiento suave
     });
   }, []);
 
   // Estado para manejar la búsqueda
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleWhatsAppClick = (nombre, precio) => {
-    const phoneNumber = '3812062925'; // Número de WhatsApp
+    const phoneNumber = "3812062925"; // Número de WhatsApp
     const message = `Hola, estoy interesado en un producto.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, "_blank");
   };
   // Filtrar productos basados en el término de búsqueda
 
@@ -68,42 +72,96 @@ const Faldas = () => {
             key={producto.id}
             className="flex flex-col h-full border border-gray-200 rounded-xl shadow-md overflow-hidden group bg-white hover:shadow-xl transition-transform transform hover:scale-105"
           >
-            {/* Fixed height image container */}
-            <div className="relative w-full h-96 overflow-hidden">
-              <img
-                src={producto.imageFront}
-                alt={producto.title}
-                className="w-full h-full object-cover opacity-100 group-hover:opacity-0 absolute top-0 left-0 transition-opacity duration-500 ease-in-out"
-              />
-              {producto.imageFront && (
-                <img
-                  src={producto.imageFront}
-                  alt={`${producto.title} espalda`}
-                  className="w-full h-full object-contain opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
-                />
+            {/* Imagen o carrusel */}
+            <div className="relative w-full h-96 overflow-hidden bg-white">
+              {producto.images && producto.images.length >= 1 ? (
+                <Swiper
+                  modules={[Navigation]}
+                  navigation={true}
+                  slidesPerView={1}
+                  className="h-full"
+                >
+                  {/* Imagen frontal primero */}
+                  <SwiperSlide>
+                    <img
+                      src={producto.imageFront}
+                      alt={producto.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </SwiperSlide>
+                  {/* Luego las demás imágenes */}
+                  {producto.images.map((image, i) => (
+                    <SwiperSlide key={i}>
+                      <img
+                        src={image}
+                        alt={`${producto.title} - imagen ${i + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              ) : (
+                <>
+                  <img
+                    src={producto.imageFront}
+                    alt={producto.title}
+                    className="w-full h-full object-cover opacity-100 group-hover:opacity-0 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
+                  />
+                  {producto.imageFront && (
+                    <img
+                      src={producto.imageFront}
+                      alt={`${producto.title} espalda`}
+                      className="w-full h-full object-contain opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
+                    />
+                  )}
+                </>
               )}
             </div>
 
-            {/* Content container with fixed height */}
+            {/* Contenido */}
             <div className="p-4 bg-white flex-grow flex flex-col justify-between">
               <div className="text-center">
                 <p className="text-gray-400 text-sm mt-2">
                   Producto {index + 1}
                 </p>
-                <p className="text-base text-gray-600 font-medium">
-                  Faldas amplias $110.000 - Polleras amplias $200.000 - Otras
-                  $70.000
-                </p>
               </div>
 
-              <button
-                className="w-full bg-pink-300 hover:bg-pink-400 text-white font-bold py-2 px-4 rounded-lg mt-4 transition"
-                onClick={() =>
-                  handleWhatsAppClick(producto.title, producto.precio)
-                }
+              {/* Botones */}
+              <div
+                className={`space-x-2 grid ${
+                  producto.precio !== "" ? "grid-cols-2" : "grid-cols-1"
+                } mt-4`}
               >
-                COMPRAR - ALQUILAR
-              </button>
+                <button
+                  className="bg-rosa-pastel hover:bg-pink-900 text-white text-sm font-bold py-2 rounded-lg transition"
+                  onClick={() =>
+                    handleWhatsAppClick(producto.title, producto.precio)
+                  }
+                >
+                  COMPRAR <br />
+                  {producto.precio !== "0"
+                    ? `$${Number(producto.precio).toLocaleString("es-AR", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}`
+                    : null}
+                </button>
+
+                <button
+                  className="bg-rosa-pastel hover:bg-pink-900 text-white text-sm font-bold py-2 rounded-lg transition"
+                  onClick={() =>
+                    handleWhatsAppClick(producto.title, producto.alquiler)
+                  }
+                >
+                  ALQUILER <br />
+                  {producto.precio !== "0"
+                    ? `$${Number(producto.alquiler).toLocaleString("es-AR", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}`
+                    : null}
+                </button>
+              </div>
             </div>
           </div>
         ))}

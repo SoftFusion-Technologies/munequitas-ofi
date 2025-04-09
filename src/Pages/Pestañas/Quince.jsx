@@ -63,48 +63,100 @@ const Quince = () => {
       {/* Grid de productos, se adapta a 3 o 4 por fila */}
       {/* Grid de productos, adaptable a diferentes tamaños */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {filteredProductos.map((producto) => (
+        {filteredProductos.map((producto, index) => (
           <Link
             key={producto.id}
             // to={`/product/${producto.id}/${encodeURIComponent(producto.title)}`}
-            className="relative border border-gray-300 rounded-xl shadow-lg overflow-hidden group bg-gradient-to-b from-green-100 to-blue-50 hover:shadow-2xl transition"
+            className="relative border border-gray-200 rounded-xl shadow-md overflow-hidden group bg-white hover:shadow-xl transition-transform transform hover:scale-105"
           >
             <div className="relative w-full min-h-[400px] sm:h-auto bg-white bg-opacity-80 backdrop-blur-md rounded-t-lg">
               <div className="relative w-full aspect-[3/4] overflow-hidden">
-                <img
-                  src={producto.imageFront}
-                  alt={producto.title}
-                  className="w-full h-full object-contain opacity-100 group-hover:opacity-0 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
-                />
-                {producto.imageFront && (
-                  <img
-                    src={producto.imageFront}
-                    alt={`${producto.title} espalda`}
-                    className="w-full h-full object-contain opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
-                  />
+                {producto.images && producto.images.length >= 1 ? (
+                  <Swiper
+                    modules={[Navigation]}
+                    navigation={true}
+                    slidesPerView={1}
+                    className="h-full"
+                  >
+                    {/* Mostramos la imagen frontal primero */}
+                    <SwiperSlide>
+                      <img
+                        src={producto.imageFront}
+                        alt={producto.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </SwiperSlide>
+                    {/* Luego mostramos el resto de imágenes del array */}
+                    {producto.images.map((image, index) => (
+                      <SwiperSlide key={index}>
+                        <img
+                          src={image}
+                          alt={`${producto.title} - imagen ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <>
+                    <img
+                      src={producto.imageFront}
+                      alt={producto.title}
+                      className="w-full h-full object-cover opacity-100 group-hover:opacity-0 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
+                    />
+                    {producto.imageFront && (
+                      <img
+                        src={producto.imageFront}
+                        alt={`${producto.title} espalda`}
+                        className="w-full h-full object-contain opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
+                      />
+                    )}
+                  </>
                 )}
               </div>
             </div>
-            <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md text-center">
-              {/* <h3 className="text-pink-600 text-xl font-semibold">
-                {producto.title}
-              </h3>
-              <p className="text-lg text-gray-600">{producto.precio}</p>
-              <p className="uppercase text-xs mt-2 mb-2">
-                {producto.newPrecio}
-              </p> */}
-
-              <p className="text-lg text-gray-600">{producto.precio}</p>
-              <p className="text-lg text-gray-600">{producto.precio2}</p>
+            <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md text-center ">
+              <p className="text-gray-400 text-sm mb-1">Producto {index + 1}</p>
               {/* Botón de compra con redirección a WhatsApp */}
-              <button
-                className="bg-rosa-pastel hover:bg-pink-900 text-white font-bold py-2 px-4 rounded-lg mt-2 transition"
-                onClick={() =>
-                  handleWhatsAppClick(producto.title, producto.precio)
-                }
+              {producto.precio === "0" ? (<br></br>):null}
+              <div
+                className={`space-x-2 grid ${
+                  producto.precio !== "" ? "grid-cols-2" : "grid-cols-1"
+                }`}
               >
-                COMPRAR - ALQUILAR
-              </button>
+                <button
+                  className="bg-rosa-pastel hover:bg-pink-900 text-white text-sm font-bold py-2 rounded-lg mt-2 transition "
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleWhatsAppClick(producto.title, producto.precio);
+                  }}
+                >
+                  COMPRAR <br></br>
+                  {producto.precio !== "0"
+                    ? `$${Number(producto.precio).toLocaleString("es-AR", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}`
+                    : null}
+                </button>
+
+                <button
+                  className="bg-rosa-pastel hover:bg-pink-900 text-white text-sm font-bold py-2 rounded-lg mt-2 transition"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleWhatsAppClick(producto.title, producto.precio);
+                  }}
+                >
+                  ALQUILER<br></br>
+                  {producto.precio !== "0"
+                    ? `$${Number(producto.alquiler).toLocaleString("es-AR", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}`
+                    : null}
+                </button>
+              </div>
+
             </div>
           </Link>
         ))}

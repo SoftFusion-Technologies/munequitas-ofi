@@ -1,4 +1,4 @@
-// Define los precios específicos para ciertos IDs
+/* // Define los precios específicos para ciertos IDs
 const priceOverrides = {
   101: 'ALQUILER $40.000 - VENTA $80.000 - PRECIO TOPS SUPER TRABAJADOS: $120.000',
   102: '$35.000',
@@ -23,3 +23,104 @@ export const tops = Array.from({ length: 50 }, (_, i) => {
     imageFront: `/Tops/tops${i + 1}.jpeg`
   };
 });
+ */
+export const tops = (() => {
+  const totalImages = 50;
+  const ofertasMap = new Map();
+
+  // Lista de precios y alquileres en el orden que corresponden a los índices (del 1 al totalImages)
+  const precios = [
+    ["80000", "40000"], // 1
+    ["50000", "35000"], // 2
+    ["80000", "40000"], // 3
+    ["80000", "40000"], // 4
+    ["60000", "30000"], // 5
+    ["70000", "35000"], // 6
+    ["60000", "30000"], // 7
+    ["60000", "30000"], // 8
+    ["70000", "35000"], // 9
+    ["60000", "30000"], // 10
+    ["50000", "25000"], // 11
+    ["90000", "45000"], // 12
+    ["70000", "35000"], // 13
+    ["90000", "45000"], // 14
+    ["100000", "50000"], // 15
+    ["100000", "50000"], // 16
+    ["80000", "40000"], // 17
+    ["40000", "20000"], // 18
+    ["0", "28000"], // 19
+    ["0", "28000"], // 20
+    ["70000", "35000"], // 21
+    ["70000", "35000"], // 22
+    ["80000", "40000"], // 23
+    ["80000", "40000"], // 24
+    ["50000", "25000"], // 25
+    ["100000", "50000"], // 26
+    ["100000", "50000"], // 27
+    ["40000", "20000"], // 28
+    ["50000", "25000"], // 29
+    ["50000", "25000"], // 30
+    ["80000", "40000"], // 31
+    ["50000", "25000"], // 32
+    ["50000", "25000"], // 33
+    ["70000", "35000"], // 34
+    ["0", "0"], // 35
+    ["70000", "35000"],  // 36
+    ["50000", "25000"],  // 37
+    ["110000", "55000"], // 38
+    ["50000", "25000"],  // 39
+    ["60000", "30000"],  // 40
+    ["40000", "20000"],  // 41
+    ["50000", "25000"],  // 42
+    ["50000", "25000"],  // 43
+    ["90000", "45000"],  // 44
+    ["80000", "40000"],  // 45
+    ["60000", "30000"],  // 46
+    ["80000", "40000"],  // 47
+    ["0", "0"], // 48
+    ["50000", "25000"],  // 49
+    ["80000", "40000"], // 50
+  ];
+  
+
+  // Función para obtener el precio y alquiler según el índice
+  const getPrecio = (index) => {
+    if (index <= precios.length) {
+      return precios[index - 1];
+    } else {
+      return precios[precios.length - 1] || ["0", "0"]; // Valor por defecto si no hay precios
+    }
+  };
+
+  // Solo estos índices tienen imágenes adicionales. Formato: posición: cantidad de imágenes adicionales
+  const hasVariantsMap = {
+  };
+
+  // Crear las ofertas base
+  for (let i = 1; i <= totalImages; i++) {
+    const [precio, alquiler] = getPrecio(i); // Obtener precio y alquiler
+    ofertasMap.set(i, {
+      id: 100 + i,
+      title: 'VESTIDO Ofertas',
+      categoria: 'simple',
+      precio, // Asignar precio
+      alquiler, // Asignar alquiler
+      imageFront: `/Tops/tops${i}.jpeg`,
+      images: [] // se rellena si corresponde
+    });
+  }
+
+  // Asignar imágenes adicionales solo donde se especifica
+  for (let i = 1; i <= totalImages; i++) {
+    if (hasVariantsMap[i]) {
+      const cantidad = hasVariantsMap[i];
+      for (let variantIndex = 1; variantIndex <= cantidad; variantIndex++) {
+        ofertasMap.get(i).images.push(`/Largos/largos${i}_${variantIndex}.jpeg`);
+      }
+    } else {
+      ofertasMap.get(i).images = undefined;
+    }
+  }
+
+  return Array.from(ofertasMap.values());
+})();
