@@ -19,7 +19,7 @@ const XXL = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleWhatsAppClick = (nombre, precio) => {
-    const phoneNumber = '3812062925'; // Número de WhatsApp
+    const phoneNumber = "+5493812062925"; // Número de WhatsApp
     const message = `Hola, estoy interesado en un producto.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message

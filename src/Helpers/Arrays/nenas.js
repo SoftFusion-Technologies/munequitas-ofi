@@ -8,39 +8,33 @@
 
  */
 export const nenas = (() => {
-  const totalImages = 28;
+  const totalImages = 22;
   const ofertasMap = new Map();
 
   // Lista de precios y alquileres en el orden que corresponden a los índices (del 1 al totalImages)
   const precios = [
-    ["0", "0"], // 1
-    ["0", "0"], // 2
-    ["0", "0"], // 3
-    ["0", "0"], // 4
-    ["0", "0"], // 5
-    ["0", "0"], // 6
-    ["0", "0"], // 7
-    ["0", "0"], // 8
-    ["0", "0"], // 9
-    ["0", "0"], // 10
-    ["0", "0"], // 11
-    ["0", "0"], // 12
-    ["0", "0"], // 13
-    ["0", "0"], // 14
-    ["0", "0"], // 15
-    ["0", "0"], // 16
-    ["0", "0"], // 17
-    ["0", "0"], // 18
-    ["0", "0"], // 19
-    ["0", "0"], // 20
-    ["0", "0"], // 21
-    ["0", "0"], // 22
-    ["0", "0"], // 23
-    ["0", "0"], // 24
-    ["0", "0"], // 25
-    ["0", "0"], // 26
-    ["0", "0"], // 27
-    ["0", "0"], // 28
+    ["60000", "35000"], // 1
+    ["60000", "35000"], // 2
+    ["45000", "30000"], // 3
+    ["60000", "35000"], // 4
+    ["60000", "35000"], // 5
+    ["70000", "40000"], // 6
+    ["60000", "30000"], // 7
+    ["0", "0"],         // 8
+    ["70000", "40000"], // 9
+    ["60000", "35000"], // 10
+    ["40000", "25000"], // 11
+    ["80000", "40000"], // 12
+    ["80000", "40000"], // 13
+    ["120000", "60000"], // 14
+    ["80000", "50000"], // 15
+    ["80000", "40000"], // 16
+    ["70000", "35000"], // 17
+    ["18000", "9000"],  // 18
+    ["20000", "10000"], // 19
+    ["120000", "50000"], // 20
+    ["20000", "12000"], // 21
+    ["80000", "40000"], // 22
   ];
   
 
@@ -55,6 +49,12 @@ export const nenas = (() => {
 
   // Solo estos índices tienen imágenes adicionales. Formato: posición: cantidad de imágenes adicionales
   const hasVariantsMap = {
+    9: 1,
+    11: 2,
+    13: 1,
+    15: 2,
+    20: 1,
+    22: 1,
   };
 
   // Crear las ofertas base
@@ -76,7 +76,7 @@ export const nenas = (() => {
     if (hasVariantsMap[i]) {
       const cantidad = hasVariantsMap[i];
       for (let variantIndex = 1; variantIndex <= cantidad; variantIndex++) {
-        ofertasMap.get(i).images.push(`/Largos/largos${i}_${variantIndex}.jpg`);
+        ofertasMap.get(i).images.push(`/Nenas/nenas${i}_${variantIndex}.jpg`);
       }
     } else {
       ofertasMap.get(i).images = undefined;
