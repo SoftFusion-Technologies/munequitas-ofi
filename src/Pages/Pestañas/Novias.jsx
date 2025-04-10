@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import '../../Styles/Productos.css';
-import { Link } from 'react-router-dom'; // Importar Link
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import ProductNotFound from '../../Components/ProductNotFound';
-import { novias } from '../../Helpers/Arrays/novias.js';
-import { Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import React, { useEffect, useState } from "react";
+import "../../Styles/Productos.css";
+import { Link } from "react-router-dom"; // Importar Link
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import ProductNotFound from "../../Components/ProductNotFound";
+import { novias } from "../../Helpers/Arrays/novias.js";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const Novias = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
   useEffect(() => {
     window.scrollTo({
       top: 0, // Desplazar hacia arriba de la página
-      behavior: 'smooth' // Añadir desplazamiento suave
+      behavior: "smooth", // Añadir desplazamiento suave
     });
   }, []);
 
   // Estado para manejar la búsqueda
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleWhatsAppClick = (nombre, precio) => {
     const phoneNumber = "+5493812062925"; // Número de WhatsApp
@@ -28,7 +28,7 @@ const Novias = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, "_blank");
   };
   // Filtrar productos basados en el término de búsqueda
 
@@ -58,7 +58,7 @@ const Novias = () => {
       </div>
 
       {filteredProductos.some(
-        (producto) => producto.categoria === 'simple'
+        (producto) => producto.categoria === "simple"
       ) && (
         <h1 className="text-rosa-pastel mt-10 text-3xl font-bold text-center sm:text-5xl mb-8 font-bignoodle">
           DE NOVIA
@@ -121,28 +121,33 @@ const Novias = () => {
             </div>
             <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md text-center ">
               <p className="text-gray-400 text-sm mb-1">Producto {index + 1}</p>
+              <p className="text-gray-400 text-sm mb-1">
+                {producto.marca ? producto.marca.toUpperCase() : <br></br>}
+              </p>
               {/* Botón de compra con redirección a WhatsApp */}
-              {producto.precio === "0" ? (<br></br>):null}
+              {producto.precio === "0" ? <br></br> : null}
               <div
                 className={`space-x-2 grid ${
                   producto.precio !== "" ? "grid-cols-2" : "grid-cols-1"
                 }`}
               >
-                <button
-                  className="bg-rosa-pastel hover:bg-pink-900 text-white text-sm font-bold py-2 rounded-lg mt-2 transition "
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleWhatsAppClick(producto.title, producto.precio);
-                  }}
-                >
-                  COMPRAR <br></br>
-                  {producto.precio !== "0"
-                    ? `$${Number(producto.precio).toLocaleString("es-AR", {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2,
-                      })}`
-                    : null}
-                </button>
+                {producto.precio === "" ? null : (
+                  <button
+                    className="bg-rosa-pastel hover:bg-pink-900 text-white text-sm font-bold py-2 rounded-lg mt-2 transition "
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleWhatsAppClick(producto.title, producto.precio);
+                    }}
+                  >
+                    COMPRAR<br></br>
+                    {producto.precio !== "0"
+                      ? `$${Number(producto.precio).toLocaleString("es-AR", {
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        })}`
+                      : null}
+                  </button>
+                )}
 
                 <button
                   className="bg-rosa-pastel hover:bg-pink-900 text-white text-sm font-bold py-2 rounded-lg mt-2 transition"
@@ -152,7 +157,7 @@ const Novias = () => {
                   }}
                 >
                   ALQUILER<br></br>
-                  {producto.precio !== "0"
+                  {producto.alquiler !== "0"
                     ? `$${Number(producto.alquiler).toLocaleString("es-AR", {
                         minimumFractionDigits: 2,
                         maximumFractionDigits: 2,
@@ -160,7 +165,6 @@ const Novias = () => {
                     : null}
                 </button>
               </div>
-
             </div>
           </Link>
         ))}

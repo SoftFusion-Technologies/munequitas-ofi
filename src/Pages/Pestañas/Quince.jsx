@@ -163,7 +163,7 @@ const Quince = () => {
                   }}
                 >
                   ALQUILER<br></br>
-                  {producto.precio !== "0"
+                  {producto.alquiler !== "0"
                     ? `$${Number(producto.alquiler).toLocaleString("es-AR", {
                         minimumFractionDigits: 2,
                         maximumFractionDigits: 2,

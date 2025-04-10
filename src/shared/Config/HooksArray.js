@@ -7,7 +7,7 @@ export const useGaleriaConPrecios = (nombreBase, precios) => {
     ofertas: import.meta.glob("../../../public/Ofertas/ofertas*.{jpg,jpeg}", { eager: true }),
     cortos: import.meta.glob("../../../public/Cortos/cortos*.{jpg,jpeg}", { eager: true }),
     largos: import.meta.glob("../../../public/Largos/largos*.{jpg,jpeg}", { eager: true }),
-    top: import.meta.glob("../../../public/Top/Top*.{jpg,jpeg}", { eager: true }),
+    top: import.meta.glob("../../../public/Top/top*.{jpg,jpeg}", { eager: true }),
     tops: import.meta.glob("../../../public/Tops/Tops*.{jpg,jpeg}", { eager: true }),
     faldas: import.meta.glob("../../../public/Faldas/faldas*.{jpg,jpeg}", { eager: true }),
   };
