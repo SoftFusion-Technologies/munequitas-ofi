@@ -58,7 +58,7 @@ const Quince = () => {
       </div>
 
       {filteredProductos.some(
-        (producto) => producto.categoria === 'simple'
+        (producto) => producto.categoria === "simple"
       ) && (
         <h1 className="text-rosa-pastel mt-10 text-3xl font-bold text-center sm:text-5xl mb-8 font-bignoodle">
           DE 15 AÑOS
@@ -121,8 +121,19 @@ const Quince = () => {
             </div>
             <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md text-center ">
               <p className="text-gray-400 text-sm mb-1">Producto {index + 1}</p>
+              <p className="text-gray-400 text-sm mb-1">
+                {producto.marca ? producto.marca.toUpperCase() : <br></br>}
+              </p>
+              <p className="text-sm text-gray-500 italic mb-2">
+                {producto.descripcion ? (
+                  producto.descripcion.toUpperCase()
+                ) : (
+                  <span className="text-gray-300">Sin descripción</span>
+                )}
+              </p>
+
               {/* Botón de compra con redirección a WhatsApp */}
-              {producto.precio === "0" ? (<br></br>):null}
+              {producto.precio === "0" ? <br></br> : null}
               <div
                 className={`space-x-2 grid ${
                   producto.precio !== "" ? "grid-cols-2" : "grid-cols-1"
@@ -160,7 +171,6 @@ const Quince = () => {
                     : null}
                 </button>
               </div>
-
             </div>
           </Link>
         ))}

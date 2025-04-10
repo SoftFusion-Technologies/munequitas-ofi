@@ -7,109 +7,42 @@
   imageFront: `/Quince/quince${i + 1}.jpeg`
 })); */
 
-export const quince = (() => {
-  const totalImages = 39;
-  const ofertasMap = new Map();
+// Precios indexados con comentarios
+import { useGaleriaConPrecios } from '../../shared/Config/HooksArray';
+const precios = [
+  ["300000", "120000", "Importado", ""],                 // 1
+  ["230000", "110000", "Importado", ""],                 // 2
+  ["280000", "120000", "Importado", ""],                 // 3
+  ["300000", "150000", "", ""],                          // 4
+  ["350000", "160000", "Importado", "Vestido 3 piezas"], // 5
+  ["180000", "90000", "", ""],                           // 6
+  ["200000", "110000", "", ""],                          // 7
+  ["350000", "160000", "Importado", "Vestido 3 piezas"], // 8
+  ["250000", "120000", "", ""],                          // 9
+  ["130000", "90000", "", ""],                           // 10
+  ["220000", "110000", "", ""],                          // 11
+  ["180000", "90000", "", ""],                           // 12
+  ["200000", "110000", "", ""],                          // 13
+  ["200000", "110000", "", ""],                          // 14
+  ["100000", "60000", "", ""],                           // 15
+  ["160000", "80000", "", ""],                           // 16
+  ["160000", "80000", "", ""],                           // 17
+  ["300000", "110000", "Importado", ""],                 // 18
+  ["160000", "80000", "", ""],                           // 19
+  ["140000", "70000", "", ""],                           // 20
+  ["250000", "110000", "", ""],                          // 21
+  ["160000", "80000", "", ""],                           // 22
+  ["160000", "80000", "", ""],                           // 23
+  ["300000", "150000", "", ""],                          // 24
+  ["220000", "110000", "", ""],                          // 25
+  ["220000", "110000", "", ""],                          // 26
+  ["160000", "80000", "", ""],                           // 27
+  ["300000", "150000", "Importado", ""],                 // 28
+  ["220000", "110000", "", ""],                          // 29
+  ["220000", "110000", "", ""],                          // 30
+  ["300000", "150000", "Importado", ""],                 // 31
+  ["300000", "150000", "", ""],                          // 32
+];
 
-  // Lista de precios y alquileres en el orden que corresponden a los índices (del 1 al totalImages)
-  const precios = [
-    ["0", "0"], // 1
-    ["0", "0"], // 2
-    ["0", "0"], // 3
-    ["0", "0"], // 4
-    ["0", "0"], // 5
-    ["0", "0"], // 6
-    ["0", "0"], // 7
-    ["0", "0"], // 8
-    ["0", "0"], // 9
-    ["0", "0"], // 10
-    ["0", "0"], // 11
-    ["0", "0"], // 12
-    ["0", "0"], // 13
-    ["0", "0"], // 14
-    ["0", "0"], // 15
-    ["0", "0"], // 16
-    ["0", "0"], // 17
-    ["0", "0"], // 18
-    ["0", "0"], // 19
-    ["0", "0"], // 20
-    ["0", "0"], // 21
-    ["0", "0"], // 22
-    ["0", "0"], // 23
-    ["0", "0"], // 24
-    ["0", "0"], // 25
-    ["0", "0"], // 26
-    ["0", "0"], // 27
-    ["0", "0"], // 28
-    ["0", "0"], // 29
-    ["0", "0"], // 30
-    ["0", "0"], // 31
-    ["0", "0"], // 32
-    ["0", "0"], // 33
-    ["0", "0"], // 34
-    ["0", "0"], // 35
-    ["0", "0"], // 36
-    ["0", "0"], // 37
-    ["0", "0"], // 38
-    ["0", "0"], // 39
-  ];
 
-  // Función para obtener el precio y alquiler según el índice
-  const getPrecio = (index) => {
-    if (index <= precios.length) {
-      return precios[index - 1];
-    } else {
-      return precios[precios.length - 1] || ["0", "0"]; // Valor por defecto si no hay precios
-    }
-  };
-
-  // Solo estos índices tienen imágenes adicionales. Formato: posición: cantidad de imágenes adicionales
-  const hasVariantsMap = {
-    1: 1,
-    3: 1,
-    4: 1,
-    5: 2,
-    7: 1,
-    9: 2,
-    13:1,
-    18: 1,
-    27: 3,
-    28: 2,
-    30: 1,
-    31: 2,
-    32: 1,
-    35:1,
-    36:1,
-    37:1,
-    38:1,
-    39:1,
-  };
-
-  // Crear las ofertas base
-  for (let i = 1; i <= totalImages; i++) {
-    const [precio, alquiler] = getPrecio(i); // Obtener precio y alquiler
-    ofertasMap.set(i, {
-      id: 100 + i,
-      title: "VESTIDO Ofertas",
-      categoria: "simple",
-      precio, // Asignar precio
-      alquiler, // Asignar alquiler
-      imageFront: `/Quince/quince${i}.jpeg`,
-      images: [], // se rellena si corresponde
-    });
-  }
-
-  // Asignar imágenes adicionales solo donde se especifica
-  for (let i = 1; i <= totalImages; i++) {
-    if (hasVariantsMap[i]) {
-      const cantidad = hasVariantsMap[i];
-      for (let variantIndex = 1; variantIndex <= cantidad; variantIndex++) {
-        ofertasMap.get(i).images.push(`/Quince/quince${i}_${variantIndex}.jpeg`);
-      }
-    } else {
-      ofertasMap.get(i).images = undefined;
-    }
-  }
-
-  return Array.from(ofertasMap.values());
-})();
+export const quince = useGaleriaConPrecios('quince', precios);

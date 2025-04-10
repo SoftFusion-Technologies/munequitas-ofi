@@ -7,7 +7,7 @@
   
   imageFront: `/Novias/novias${i + 1}.jpeg`
 })); */
-export const novias = (() => {
+/* export const novias = (() => {
   const totalImages = 23;
   const ofertasMap = new Map();
 
@@ -87,4 +87,109 @@ export const novias = (() => {
   }
 
   return Array.from(ofertasMap.values());
-})();
+})(); */
+
+// novias.js
+
+// 1. Cargar todas las imágenes .jpeg 
+/* const images = import.meta.glob('/public/Novias/novias*.jpeg', { eager: true });
+
+// Precios indexados con comentarios
+const precios = [
+  ["0", "0"], // 1
+  ["0", "0"], // 2
+  ["0", "0"], // 3
+  ["0", "0"], // 4
+  ["0", "0"], // 5
+  ["0", "0"], // 6
+  ["0", "0"], // 7
+  ["0", "0"], // 8
+  ["0", "0"], // 9
+  ["0", "0"], // 10
+  ["0", "0"], // 11
+  ["0", "0"], // 12
+  ["0", "0"], // 13
+  ["0", "0"], // 14
+  ["0", "0"], // 15
+  ["0", "0"], // 16
+  ["0", "0"], // 17
+  ["0", "0"], // 18
+  ["0", "0"], // 19
+  ["0", "0"], // 20
+  ["0", "0"], // 21
+  ["0", "0"], // 22
+  ["0", "0"], // 23
+];
+
+const ofertasMap = new Map();
+
+// 🔽 Convertimos el objeto a array y ordenamos por número
+const sortedEntries = Object.entries(images).sort(([pathA], [pathB]) => {
+  const getNumber = (str) => {
+    const match = str.match(/novias(\d+)(?:_(\d+))?/);
+    if (!match) return 0;
+    const main = parseInt(match[1], 10);
+    const variant = match[2] ? parseInt(match[2], 10) : -1;
+    return main * 100 + variant; // asegura que 4 < 4_1 < 4_2 < 5
+  };
+  return getNumber(pathA) - getNumber(pathB);
+});
+
+for (const [path] of sortedEntries) {
+  const match = path.match(/novias(\d+)(?:_(\d+))?\.jpeg$/);
+  if (!match) continue;
+
+  const baseIndex = parseInt(match[1], 10);
+  const variantIndex = match[2] ? parseInt(match[2], 10) : null;
+
+  if (!ofertasMap.has(baseIndex)) {
+    const [precio, alquiler] = precios[baseIndex - 1] || ["0", "0"];
+
+    ofertasMap.set(baseIndex, {
+      id: 100 + baseIndex,
+      title: "VESTIDO Ofertas",
+      categoria: "simple",
+      precio,
+      alquiler,
+      imageFront: `/Novias/novias${baseIndex}.jpeg`,
+      images: [],
+    });
+  }
+
+  if (variantIndex !== null) {
+    ofertasMap.get(baseIndex).images.push(`/Novias/novias${baseIndex}_${variantIndex}.jpeg`);
+  }
+}
+
+export const novias = Array.from(ofertasMap.values()); */
+
+import { useGaleriaConPrecios } from '../../shared/Config/HooksArray';
+
+const precios = [
+  ["0", "0"], // 1
+  ["0", "0"], // 2
+  ["0", "0"], // 3
+  ["0", "0"], // 4
+  ["0", "0"], // 5
+  ["0", "0"], // 6
+  ["0", "0"], // 7
+  ["0", "0"], // 8
+  ["0", "0"], // 9
+  ["0", "0"], // 10
+  ["0", "0"], // 11
+  ["0", "0"], // 12
+  ["0", "0"], // 13
+  ["0", "0"], // 14
+  ["0", "0"], // 15
+  ["0", "0"], // 16
+  ["0", "0"], // 17
+  ["0", "0"], // 18
+  ["0", "0"], // 19
+  ["0", "0"], // 20
+  ["0", "0"], // 21
+  ["0", "0"], // 22
+  ["0", "0"], // 23
+];
+
+
+export const novias = useGaleriaConPrecios('novias', precios);
