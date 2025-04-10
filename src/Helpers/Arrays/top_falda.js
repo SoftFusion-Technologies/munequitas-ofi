@@ -10,7 +10,7 @@
  */
 
 export const top = (() => {
-  const totalImages = 69;
+  const totalImages = 61;
   const ofertasMap = new Map();
 
   // Lista de precios y alquileres en el orden que corresponden a los índices (del 1 al totalImages)
@@ -47,6 +47,35 @@ export const top = (() => {
     ["0", "0"], // 30
     ["0", "0"], // 31
     ["0", "0"], // 32
+    ["0", "0"], // 33
+    ["0", "0"], // 34
+    ["0", "0"], // 35
+    ["0", "0"], // 36
+    ["0", "0"], // 37
+    ["0", "0"], // 38
+    ["0", "0"], // 39
+    ["0", "0"], // 40
+    ["0", "0"], // 41
+    ["0", "0"], // 42
+    ["0", "0"], // 43
+    ["0", "0"], // 44
+    ["0", "0"], // 45
+    ["0", "0"], // 46
+    ["0", "0"], // 47
+    ["0", "0"], // 48
+    ["0", "0"], // 49
+    ["0", "0"], // 50
+    ["0", "0"], // 51
+    ["0", "0"], // 52
+    ["0", "0"], // 53
+    ["0", "0"], // 54
+    ["0", "0"], // 55
+    ["0", "0"], // 56
+    ["0", "0"], // 57
+    ["0", "0"], // 58
+    ["0", "0"], // 59
+    ["0", "0"], // 60
+    ["0", "0"], // 61
   ];
   
 
@@ -61,6 +90,14 @@ export const top = (() => {
 
   // Solo estos índices tienen imágenes adicionales. Formato: posición: cantidad de imágenes adicionales
   const hasVariantsMap = {
+    18: 1,
+    23: 1,
+    26: 1,
+    40: 1,
+    52: 1,
+    53: 1,
+    56: 1,
+    57: 1,
   };
 
   // Crear las ofertas base
@@ -82,7 +119,7 @@ export const top = (() => {
     if (hasVariantsMap[i]) {
       const cantidad = hasVariantsMap[i];
       for (let variantIndex = 1; variantIndex <= cantidad; variantIndex++) {
-        ofertasMap.get(i).images.push(`/Largos/largos${i}_${variantIndex}.jpeg`);
+        ofertasMap.get(i).images.push(`/Top/top${i}_${variantIndex}.jpeg`);
       }
     } else {
       ofertasMap.get(i).images = undefined;

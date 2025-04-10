@@ -8,7 +8,7 @@
   imageFront: `/Novias/novias${i + 1}.jpeg`
 })); */
 export const novias = (() => {
-  const totalImages = 32;
+  const totalImages = 23;
   const ofertasMap = new Map();
 
   // Lista de precios y alquileres en el orden que corresponden a los índices (del 1 al totalImages)
@@ -36,14 +36,6 @@ export const novias = (() => {
     ["0", "0"], // 21
     ["0", "0"], // 22
     ["0", "0"], // 23
-    ["0", "0"], // 24
-    ["0", "0"], // 25
-    ["0", "0"], // 26
-    ["0", "0"], // 27
-    ["0", "0"], // 28
-    ["0", "0"], // 30
-    ["0", "0"], // 31
-    ["0", "0"], // 32
   ];
   
 
@@ -58,6 +50,14 @@ export const novias = (() => {
 
   // Solo estos índices tienen imágenes adicionales. Formato: posición: cantidad de imágenes adicionales
   const hasVariantsMap = {
+    5:1,
+    6:1,
+    7:1,
+    13:1,
+    14:1,
+    18:2,
+    19:1,
+    22:1,
   };
 
   // Crear las ofertas base
@@ -79,7 +79,7 @@ export const novias = (() => {
     if (hasVariantsMap[i]) {
       const cantidad = hasVariantsMap[i];
       for (let variantIndex = 1; variantIndex <= cantidad; variantIndex++) {
-        ofertasMap.get(i).images.push(`/Largos/largos${i}_${variantIndex}.jpg`);
+        ofertasMap.get(i).images.push(`/Novias/novias${i}_${variantIndex}.jpeg`);
       }
     } else {
       ofertasMap.get(i).images = undefined;

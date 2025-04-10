@@ -8,7 +8,7 @@
 })); */
 
 export const quince = (() => {
-  const totalImages = 65;
+  const totalImages = 39;
   const ofertasMap = new Map();
 
   // Lista de precios y alquileres en el orden que corresponden a los índices (del 1 al totalImages)
@@ -41,8 +41,18 @@ export const quince = (() => {
     ["0", "0"], // 26
     ["0", "0"], // 27
     ["0", "0"], // 28
+    ["0", "0"], // 29
+    ["0", "0"], // 30
+    ["0", "0"], // 31
+    ["0", "0"], // 32
+    ["0", "0"], // 33
+    ["0", "0"], // 34
+    ["0", "0"], // 35
+    ["0", "0"], // 36
+    ["0", "0"], // 37
+    ["0", "0"], // 38
+    ["0", "0"], // 39
   ];
-  
 
   // Función para obtener el precio y alquiler según el índice
   const getPrecio = (index) => {
@@ -55,6 +65,24 @@ export const quince = (() => {
 
   // Solo estos índices tienen imágenes adicionales. Formato: posición: cantidad de imágenes adicionales
   const hasVariantsMap = {
+    1: 1,
+    3: 1,
+    4: 1,
+    5: 2,
+    7: 1,
+    9: 2,
+    13:1,
+    18: 1,
+    27: 3,
+    28: 2,
+    30: 1,
+    31: 2,
+    32: 1,
+    35:1,
+    36:1,
+    37:1,
+    38:1,
+    39:1,
   };
 
   // Crear las ofertas base
@@ -62,12 +90,12 @@ export const quince = (() => {
     const [precio, alquiler] = getPrecio(i); // Obtener precio y alquiler
     ofertasMap.set(i, {
       id: 100 + i,
-      title: 'VESTIDO Ofertas',
-      categoria: 'simple',
+      title: "VESTIDO Ofertas",
+      categoria: "simple",
       precio, // Asignar precio
       alquiler, // Asignar alquiler
       imageFront: `/Quince/quince${i}.jpeg`,
-      images: [] // se rellena si corresponde
+      images: [], // se rellena si corresponde
     });
   }
 
@@ -76,7 +104,7 @@ export const quince = (() => {
     if (hasVariantsMap[i]) {
       const cantidad = hasVariantsMap[i];
       for (let variantIndex = 1; variantIndex <= cantidad; variantIndex++) {
-        ofertasMap.get(i).images.push(`/Largos/largos${i}_${variantIndex}.jpg`);
+        ofertasMap.get(i).images.push(`/Quince/quince${i}_${variantIndex}.jpeg`);
       }
     } else {
       ofertasMap.get(i).images = undefined;

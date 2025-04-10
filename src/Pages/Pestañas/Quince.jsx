@@ -5,6 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import ProductNotFound from '../../Components/ProductNotFound.jsx';
 import { quince } from '../../Helpers/Arrays/quince.js';
+import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const Quince = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
