@@ -6,11 +6,7 @@
   imageFront: `/Largos/largos${i + 1}.jpeg`
 }));
  */
-export const largos = (() => {
-  const totalImages = 85;
-  const ofertasMap = new Map();
-
-  // Lista de precios y alquileres en el orden que corresponden a los índices (del 1 al totalImages)
+import { useGaleriaConPrecios } from '../../shared/Config/HooksArray';
   const precios = [
     ["45000", "35000"], // 1
     ["0", "0"], // 2 //No esta a la venta
@@ -99,69 +95,4 @@ export const largos = (() => {
     ["", "100000"], // 85
   ];
   
-
-  // Función para obtener el precio y alquiler según el índice
-  const getPrecio = (index) => {
-    if (index <= precios.length) {
-      return precios[index - 1];
-    } else {
-      return precios[precios.length - 1] || ["0", "0"]; // Valor por defecto si no hay precios
-    }
-  };
-
-  // Solo estos índices tienen imágenes adicionales. Formato: posición: cantidad de imágenes adicionales
-  const hasVariantsMap = {
-    5: 2,
-    8: 1,
-    9: 1,
-    10: 1,
-    11: 2,
-    12: 1,
-    13: 1,
-    19: 1,
-    20: 1,
-    23: 1,
-    26: 1,
-    32: 1,
-    33: 1,
-    34: 1,
-    37: 1,
-    38: 1,
-    39: 1,
-    53: 1,
-    66: 1,
-    67: 1,
-    68: 1,
-    76: 1,
-    81: 1,
-    84: 1,
-  };
-
-  // Crear las ofertas base
-  for (let i = 1; i <= totalImages; i++) {
-    const [precio, alquiler] = getPrecio(i); // Obtener precio y alquiler
-    ofertasMap.set(i, {
-      id: 100 + i,
-      title: 'VESTIDO Ofertas',
-      categoria: 'simple',
-      precio, // Asignar precio
-      alquiler, // Asignar alquiler
-      imageFront: `/Largos/largos${i}.jpeg`,
-      images: [] // se rellena si corresponde
-    });
-  }
-
-  // Asignar imágenes adicionales solo donde se especifica
-  for (let i = 1; i <= totalImages; i++) {
-    if (hasVariantsMap[i]) {
-      const cantidad = hasVariantsMap[i];
-      for (let variantIndex = 1; variantIndex <= cantidad; variantIndex++) {
-        ofertasMap.get(i).images.push(`/Largos/largos${i}_${variantIndex}.jpeg`);
-      }
-    } else {
-      ofertasMap.get(i).images = undefined;
-    }
-  }
-
-  return Array.from(ofertasMap.values());
-})();
+export const largos = useGaleriaConPrecios('largos', precios);
