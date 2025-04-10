@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../Styles/Productos.css";
 import { Link } from "react-router-dom"; // Importar Link
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import ProductNotFound from "../../Components/ProductNotFound";
 import { novias } from "../../Helpers/Arrays/novias.js";
 import { Navigation } from "swiper/modules";

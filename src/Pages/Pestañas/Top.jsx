@@ -59,7 +59,7 @@ const Top = () => {
       </div>
 
       {filteredProductos.some(
-        (producto) => producto.categoria === 'simple'
+        (producto) => producto.categoria === "simple"
       ) && (
         <h1 className="text-center text-rosa-pastel mt-10 text-3xl font-bold sm:text-5xl mb-8 font-bignoodle">
           TOP Y FALDAS
@@ -122,29 +122,40 @@ const Top = () => {
             </div>
             <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md text-center ">
               <p className="text-gray-400 text-sm mb-1">Producto {index + 1}</p>
+              <p className="text-gray-400 text-sm mb-1">
+                {producto.marca ? producto.marca.toUpperCase() : <br></br>}
+              </p>
+              <p className="text-sm text-gray-500 italic mb-2">
+                {producto.descripcion ? (
+                  producto.descripcion.toUpperCase()
+                ) : (
+                  <span className="text-gray-300">Sin descripción</span>
+                )}
+              </p>
               {/* Botón de compra con redirección a WhatsApp */}
-              {producto.precio === "0" ? (<br></br>):null}
+              {producto.precio === "0" ? <br></br> : null}
               <div
                 className={`space-x-2 grid ${
                   producto.precio !== "" ? "grid-cols-2" : "grid-cols-1"
                 }`}
               >
-                <button
-                  className="bg-rosa-pastel hover:bg-pink-900 text-white text-sm font-bold py-2 rounded-lg mt-2 transition "
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleWhatsAppClick(producto.title, producto.precio);
-                  }}
-                >
-                  COMPRAR <br></br>
-                  {producto.precio !== "0"
-                    ? `$${Number(producto.precio).toLocaleString("es-AR", {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2,
-                      })}`
-                    : null}
-                </button>
-
+                {producto.precio === "" ? null : (
+                  <button
+                    className="bg-rosa-pastel hover:bg-pink-900 text-white text-sm font-bold py-2 rounded-lg mt-2 transition "
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleWhatsAppClick(producto.title, producto.precio);
+                    }}
+                  >
+                    COMPRAR <br></br>
+                    {producto.precio !== "0"
+                      ? `$${Number(producto.precio).toLocaleString("es-AR", {
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        })}`
+                      : null}
+                  </button>
+                )}
                 <button
                   className="bg-rosa-pastel hover:bg-pink-900 text-white text-sm font-bold py-2 rounded-lg mt-2 transition"
                   onClick={(e) => {
@@ -161,7 +172,6 @@ const Top = () => {
                     : null}
                 </button>
               </div>
-
             </div>
           </Link>
         ))}

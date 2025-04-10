@@ -1,25 +1,17 @@
 import React, { useEffect, useState } from "react";
-import "../../Styles/Productos.css";
-import { Link } from "react-router-dom"; // Importar Link
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import ProductNotFound from "../../Components/ProductNotFound.jsx";
-import { tops } from "../../Helpers/Arrays/tops.js";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import { Link } from "react-router-dom"; // Importar Link
 
-const Tops = () => {
-  // Desplazar hacia la parte superior cuando el componente se monte
+const BasePestrañas = ({ titulo, filteredProductos }) => {
   useEffect(() => {
     window.scrollTo({
       top: 0, // Desplazar hacia arriba de la página
       behavior: "smooth", // Añadir desplazamiento suave
     });
   }, []);
-
-  // Estado para manejar la búsqueda
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleWhatsAppClick = (nombre, precio) => {
@@ -30,38 +22,33 @@ const Tops = () => {
     )}`;
     window.open(whatsappUrl, "_blank");
   };
-  // Filtrar productos basados en el término de búsqueda
-
-  const filteredProductos = tops.filter((producto) =>
-    producto.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
 
   return (
     <div className="productos-container py-16 px-4 sm:px-8">
       <h2 className="text-center text-[#d4af37] text-4xl sm:text-6xl font-bold mb-6 font-bignoodle tracking-wide drop-shadow-md uppercase">
-        Nuestros Vestidos
+        {titulo}
       </h2>
       {/* Campo de búsqueda */}
       <div className="relative mb-8">
         {/* Input con lupa */}
         {/* <input
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Buscar productos..."
-          className="p-2 border border-pink-300 rounded-lg w-full sm:w-1/3 mx-auto pl-10"
-        />
-        <FontAwesomeIcon
-          icon={faSearch}
-          className="absolute left-3 top-1/2 transform -translate-y-1/2 text-pink-400"
-        /> */}
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Buscar productos..."
+              className="p-2 border border-pink-300 rounded-lg w-full sm:w-1/3 mx-auto pl-10"
+            />
+            <FontAwesomeIcon
+              icon={faSearch}
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-pink-400"
+            /> */}
       </div>
 
       {filteredProductos.some(
         (producto) => producto.categoria === "simple"
       ) && (
-        <h1 className="text-center text-rosa-pastel mt-10 text-3xl font-bold sm:text-5xl mb-8 font-bignoodle">
-          TOP
+        <h1 className="text-rosa-pastel mt-10 text-3xl font-bold text-center sm:text-5xl mb-8 font-bignoodle">
+          DE NOVIA
         </h1>
       )}
       {/* Grid de productos, se adapta a 3 o 4 por fila */}
@@ -121,6 +108,9 @@ const Tops = () => {
             </div>
             <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md text-center ">
               <p className="text-gray-400 text-sm mb-1">Producto {index + 1}</p>
+              <p className="text-gray-400 text-sm mb-1">
+                {producto.marca ? producto.marca.toUpperCase() : <br></br>}
+              </p>
               {/* Botón de compra con redirección a WhatsApp */}
               {producto.precio === "0" ? <br></br> : null}
               <div
@@ -136,7 +126,7 @@ const Tops = () => {
                       handleWhatsAppClick(producto.title, producto.precio);
                     }}
                   >
-                    COMPRAR <br></br>
+                    COMPRAR<br></br>
                     {producto.precio !== "0"
                       ? `$${Number(producto.precio).toLocaleString("es-AR", {
                           minimumFractionDigits: 2,
@@ -177,4 +167,4 @@ const Tops = () => {
   );
 };
 
-export default Tops;
+export default BasePestrañas;

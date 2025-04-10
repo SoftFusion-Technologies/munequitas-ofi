@@ -6,10 +6,7 @@
   imageFront: `/Faldas/faldas${i + 1}.jpeg`
 })); */
 
-export const faldas = (() => {
-  const totalImages = 28;
-  const ofertasMap = new Map();
-
+import { useGaleriaConPrecios } from '../../shared/Config/HooksArray';
   // Lista de precios y alquileres en el orden que corresponden a los índices (del 1 al totalImages)
   const precios = [
     ["60000", "30000"], // 1
@@ -41,48 +38,5 @@ export const faldas = (() => {
     ["120000", "60000"], // 27
     ["120000", "60000"], // 28
   ];
-  
 
-  // Función para obtener el precio y alquiler según el índice
-  const getPrecio = (index) => {
-    if (index <= precios.length) {
-      return precios[index - 1];
-    } else {
-      return precios[precios.length - 1] || ["0", "0"]; // Valor por defecto si no hay precios
-    }
-  };
-
-  // Solo estos índices tienen imágenes adicionales. Formato: posición: cantidad de imágenes adicionales
-  const hasVariantsMap = {
-    9: 1,
-    27: 1,
-  };
-
-  // Crear las ofertas base
-  for (let i = 1; i <= totalImages; i++) {
-    const [precio, alquiler] = getPrecio(i); // Obtener precio y alquiler
-    ofertasMap.set(i, {
-      id: 100 + i,
-      title: 'VESTIDO Ofertas',
-      categoria: 'simple',
-      precio, // Asignar precio
-      alquiler, // Asignar alquiler
-      imageFront: `/Faldas/faldas${i}.jpeg`,
-      images: [] // se rellena si corresponde
-    });
-  }
-
-  // Asignar imágenes adicionales solo donde se especifica
-  for (let i = 1; i <= totalImages; i++) {
-    if (hasVariantsMap[i]) {
-      const cantidad = hasVariantsMap[i];
-      for (let variantIndex = 1; variantIndex <= cantidad; variantIndex++) {
-        ofertasMap.get(i).images.push(`/Faldas/faldas${i}_${variantIndex}.jpeg`);
-      }
-    } else {
-      ofertasMap.get(i).images = undefined;
-    }
-  }
-
-  return Array.from(ofertasMap.values());
-})();
+export const faldas = useGaleriaConPrecios('faldas', precios);
