@@ -23,6 +23,16 @@ const Hero = () => {
       {/* Overlay para oscurecer la imagen */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 md:px-8">
         <div className="text-center">
+          {/* Texto adicional animado */}
+          <motion.p
+            className="bg-rosa-pastel text-white font-bold py-2 px-4 rounded-full inline-block mb-4 text-sm sm:text-base lg:text-lg shadow-lg"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            ¡Envíos gratis a partir de $100.000!
+          </motion.p>
+
           <motion.h1
             className="uppercase font-bignoodle text-4xl sm:text-5xl lg:text-7xl font-serif font-bold mb-6"
             initial={{ opacity: 0, y: 50 }}
@@ -45,9 +55,16 @@ const Hero = () => {
 
         <button
           onClick={() => navigate('/turnero')}
-          className="uppercase bg-white text-black font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out hover:bg-rosa-pastel hover:text-white"
+          className="uppercase bg-white text-black font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out hover:bg-rosa-pastel hover:text-white mb-4"
         >
           Solicitar Turno
+        </button>
+
+        <button
+          onClick={() => navigate('/NOVEDADES')}
+          className="uppercase bg-rosa-pastel text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out hover:bg-white hover:text-black shadow-lg"
+        >
+          Entérate de nuestras promociones
         </button>
       </div>
     </section>

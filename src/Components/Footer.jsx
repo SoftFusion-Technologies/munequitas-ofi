@@ -76,6 +76,14 @@ const Footer = () => {
                   XXL
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/novedades"
+                  className="hover:text-pink-700 font-bold transition-colors"
+                >
+                  Novedades
+                </Link>
+              </li>
             </ul>
           </div>
 

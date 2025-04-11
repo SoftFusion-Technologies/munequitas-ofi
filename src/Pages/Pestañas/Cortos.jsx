@@ -5,11 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import ProductNotFound from "../../Components/ProductNotFound.jsx";
 import { cortos } from "../../Helpers/Arrays/cortos.js";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { div } from "framer-motion/client";
+import Horarios from "../../Components/Horarios.jsx";
 
 const Cortos = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
@@ -177,6 +178,10 @@ const Cortos = () => {
           <ProductNotFound />
         </div>
       )}
+
+      <div className="mt-16">
+        <Horarios></Horarios>
+      </div>
     </div>
   );
 };

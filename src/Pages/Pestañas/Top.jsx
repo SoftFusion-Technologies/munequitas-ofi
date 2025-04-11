@@ -9,6 +9,7 @@ import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import Horarios from '../../Components/Horarios.jsx';
 
 
 const Top = () => {
@@ -183,6 +184,9 @@ const Top = () => {
           <ProductNotFound />
         </div>
       )}
+      <div className="mt-16">
+        <Horarios></Horarios>
+      </div>
     </div>
   );
 };

@@ -1,35 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import '../../Styles/Productos.css';
-import { Link } from 'react-router-dom'; // Importar Link
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import ProductNotFound from '../../Components/ProductNotFound.jsx';
-import { largos } from '../../Helpers/Arrays/largos.js';
-import { Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-
+import React, { useEffect, useState } from "react";
+import "../../Styles/Productos.css";
+import { Link } from "react-router-dom"; // Importar Link
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import ProductNotFound from "../../Components/ProductNotFound.jsx";
+import { largos } from "../../Helpers/Arrays/largos.js";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import Horarios from "../../Components/Horarios.jsx";
 
 const Largos = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
   useEffect(() => {
     window.scrollTo({
       top: 0, // Desplazar hacia arriba de la página
-      behavior: 'smooth' // Añadir desplazamiento suave
+      behavior: "smooth", // Añadir desplazamiento suave
     });
   }, []);
 
   // Estado para manejar la búsqueda
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleWhatsAppClick = (nombre, precio) => {
-    const phoneNumber = '+5493812062925'; // Número de WhatsApp
+    const phoneNumber = "+5493812062925"; // Número de WhatsApp
     const message = `Hola, estoy interesado en un producto.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, "_blank");
   };
   // Filtrar productos basados en el término de búsqueda
 
@@ -174,6 +174,9 @@ const Largos = () => {
           <ProductNotFound />
         </div>
       )}
+      <div className="mt-16">
+        <Horarios></Horarios>
+      </div>
     </div>
   );
 };

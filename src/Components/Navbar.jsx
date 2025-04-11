@@ -16,7 +16,8 @@ const Navbar = () => {
     'NOVIAS',
     'QUINCE AÑOS',
     'XXL',
-    'TOP FALDA'
+    'TOP FALDA',
+    'NOVEDADES',
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);

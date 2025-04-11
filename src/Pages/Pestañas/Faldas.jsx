@@ -9,6 +9,7 @@ import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import Horarios from "../../Components/Horarios.jsx";
 
 const Faldas = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
@@ -173,6 +174,9 @@ const Faldas = () => {
           <ProductNotFound />
         </div>
       )}
+            <div className="mt-16">
+        <Horarios></Horarios>
+      </div>
     </div>
   );
 };

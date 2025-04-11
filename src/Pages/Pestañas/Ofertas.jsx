@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import '../../Styles/Productos.css';
-import { Link } from 'react-router-dom'; // Importar Link
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import ProductNotFound from '../../Components/ProductNotFound.jsx';
-import { ofertas } from '../../Helpers/Arrays/ofertas.js';
-import { Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import React, { useEffect, useState } from "react";
+import "../../Styles/Productos.css";
+import { Link } from "react-router-dom"; // Importar Link
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import ProductNotFound from "../../Components/ProductNotFound.jsx";
+import { ofertas } from "../../Helpers/Arrays/ofertas.js";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import Horarios from "../../Components/Horarios.jsx";
 
 const Ofertas = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
   useEffect(() => {
     window.scrollTo({
       top: 0, // Desplazar hacia arriba de la página
-      behavior: 'smooth' // Añadir desplazamiento suave
+      behavior: "smooth", // Añadir desplazamiento suave
     });
   }, []);
 
   // Estado para manejar la búsqueda
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleWhatsAppClick = (nombre, precio) => {
     const phoneNumber = "+5493812062925"; // Número de WhatsApp
@@ -28,7 +29,7 @@ const Ofertas = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, "_blank");
   };
   // Filtrar productos basados en el término de búsqueda
 
@@ -120,7 +121,7 @@ const Ofertas = () => {
               </div>
             </div>
             <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md text-center">
-            {/* <h3 className="text-pink-600 text-xl font-semibold">
+              {/* <h3 className="text-pink-600 text-xl font-semibold">
                 {producto.title}
               </h3>
               <p className="text-lg text-gray-600">{producto.precio}</p>
@@ -157,6 +158,9 @@ const Ofertas = () => {
           <ProductNotFound />
         </div>
       )}
+      <div className="mt-16">
+        <Horarios></Horarios>
+      </div>
     </div>
   );
 };

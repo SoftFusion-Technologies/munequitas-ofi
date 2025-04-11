@@ -16,6 +16,7 @@ import NotFound from './Pages/NotFound';
 import Top from './Pages/Pestañas/Top';
 import Tops from './Pages/Pestañas/Tops';
 import Faldas from './Pages/Pestañas/Faldas';
+import Novedades from './Pages/Pestañas/Novedades';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/quince-años" element={<Quince />}></Route>
         <Route path="/xxl" element={<XXL />}></Route>
         <Route path="/top-falda" element={<Top />}></Route>
+        <Route path="/novedades" element={<Novedades />}></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Mapa></Mapa>

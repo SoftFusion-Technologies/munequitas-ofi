@@ -1,22 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import '../../Styles/Productos.css';
-import { Link } from 'react-router-dom'; // Importar Link
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import ProductNotFound from '../../Components/ProductNotFound.jsx';
-import { xxl } from '../../Helpers/Arrays/xxl.js';
+import React, { useEffect, useState } from "react";
+import "../../Styles/Productos.css";
+import { Link } from "react-router-dom"; // Importar Link
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import ProductNotFound from "../../Components/ProductNotFound.jsx";
+import { xxl } from "../../Helpers/Arrays/xxl.js";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import Horarios from "../../Components/Horarios.jsx";
 
 const XXL = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
   useEffect(() => {
     window.scrollTo({
       top: 0, // Desplazar hacia arriba de la página
-      behavior: 'smooth' // Añadir desplazamiento suave
+      behavior: "smooth", // Añadir desplazamiento suave
     });
   }, []);
 
   // Estado para manejar la búsqueda
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleWhatsAppClick = (nombre, precio) => {
     const phoneNumber = "+5493812062925"; // Número de WhatsApp
@@ -24,7 +29,7 @@ const XXL = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, "_blank");
   };
   // Filtrar productos basados en el término de búsqueda
 
@@ -54,7 +59,7 @@ const XXL = () => {
       </div>
 
       {filteredProductos.some(
-        (producto) => producto.categoria === 'simple'
+        (producto) => producto.categoria === "simple"
       ) && (
         <h1 className="text-center text-rosa-pastel mt-10 text-3xl font-bold sm:text-5xl mb-8 font-bignoodle">
           XXL
@@ -118,7 +123,7 @@ const XXL = () => {
             <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md text-center ">
               <p className="text-gray-400 text-sm mb-1">Producto {index + 1}</p>
               {/* Botón de compra con redirección a WhatsApp */}
-              {producto.precio === "0" ? (<br></br>):null}
+              {producto.precio === "0" ? <br></br> : null}
               <div
                 className={`space-x-2 grid ${
                   producto.precio !== "" ? "grid-cols-2" : "grid-cols-1"
@@ -156,7 +161,6 @@ const XXL = () => {
                     : null}
                 </button>
               </div>
-
             </div>
           </Link>
         ))}
@@ -168,6 +172,9 @@ const XXL = () => {
           <ProductNotFound />
         </div>
       )}
+      <div className="mt-16">
+        <Horarios></Horarios>
+      </div>
     </div>
   );
 };
