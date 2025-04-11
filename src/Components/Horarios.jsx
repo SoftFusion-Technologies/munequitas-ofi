@@ -12,11 +12,13 @@ const Horarios = () => {
       direccion: "España 1875, Concepción",
     },
     Envio: {
-      texto: "¡Envíos gratis a partir de $100.000!",
+      titulo: "¡Envíos disponibles!",
+      texto_1: "¡Sin cargo y sin límites!",
       ubicacion_1: "San Miguel de Tucumán",
-      texto_1: "(Venta y Alquiler)",
-      ubicacion_2: "Envíos a todo el país",
-      texto_2: "(Solo para Venta)",
+      especificacion_1: "(Venta y Alquiler)",
+      texto_2: "¡Envíos gratis a partir de $100.000!",
+      ubicacion_2: "A todo el país",
+      especificacion_2: "(Solo para Venta)",
     },
     telefono: {
       texto: "Teléfono",
@@ -135,18 +137,21 @@ const Horarios = () => {
               />
             </svg>
             <div>
-              <h4 className="text-xl font-bold mb-1">{horarios.Envio.texto}</h4>
-              <p className="text-lg mb-2">
+              <h4 className="text-xl font-bold mb-1">{horarios.Envio.titulo}</h4>
+              <p className="text-lg mb-2 ">
+                {horarios.Envio.texto_1} <br></br>
                 <span className="font-bold text-yellow-200">
                   {horarios.Envio.ubicacion_1}
                 </span>{" "}
-                {horarios.Envio.texto_1}
+                {horarios.Envio.especificacion_1}
               </p>
+              <br></br>
               <p className="text-lg mb-2">
+                {horarios.Envio.texto_2} <br></br>
                 <span className="font-bold text-yellow-200">
                   {horarios.Envio.ubicacion_2}
                 </span>{" "}
-                {horarios.Envio.texto_2}
+                {horarios.Envio.especificacion_2}
               </p>
             </div>
           </div>
