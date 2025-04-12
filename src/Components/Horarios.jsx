@@ -4,7 +4,7 @@ const Horarios = () => {
   const horarios = {
     titulo: "Horarios de Atención",
     disponibilidad: {
-      dias: "Martes y Viernes de ",
+      dias: "Martes a Viernes de ",
       horarios: "09 a 13hs y de 17 a 21hs",
     },
     Direccion: {
