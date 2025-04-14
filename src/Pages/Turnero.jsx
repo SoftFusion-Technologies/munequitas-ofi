@@ -175,7 +175,7 @@ const Turnero = () => {
           En caso de no poder solicitar tu turno, podés acudir en los siguientes
           días y horarios:
           <span className="block font-semibold mt-1">
-            Martes, miércoles, jueves y viernes — 9:00 a 13:00 hs y 17:00 a
+            De Martes a viernes — 9:00 a 13:00 hs y 17:00 a
             21:00 hs
           </span>
         </p>

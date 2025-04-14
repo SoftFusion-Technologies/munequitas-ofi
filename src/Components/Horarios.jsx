@@ -50,7 +50,7 @@ const Horarios = () => {
       </div>
 
       {/* Contenido en grid responsive */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 text-left max-w-5xl mx-auto">
         {/* Horarios */}
         <div className="bg-white/10 p-5 rounded-xl backdrop-blur-sm border border-white/20 transition-all duration-300 shadow-lg hover:scale-105">
           <div className="flex items-start mb-3">
