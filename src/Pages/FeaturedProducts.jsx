@@ -27,13 +27,13 @@ const FeaturedProducts = () => {
                   <img
                     src={product.imageFront}
                     alt={product.title}
-                    className="w-full h-full object-contain opacity-100 group-hover:opacity-0 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
+                    className="w-full h-full object-cover opacity-100 group-hover:opacity-0 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
                   />
                   {product.imageBack && (
                     <img
                       src={product.imageBack}
                       alt={`${product.title} espalda`}
-                      className="w-full h-full object-contain opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
+                      className="w-full h-full object-cover opacity-0 group-hover:opacity-100 absolute top-0 left-0 transition-opacity duration-1000 ease-in-out"
                     />
                   )}
                 </div>

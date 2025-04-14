@@ -8,6 +8,7 @@ import Horarios from "../Components/Horarios";
 import MediosDePago from "../Components/MediosDePago";
 import MediosDeEnvio from "../Components/MediosDeEnvio";
 import Testimonials from "../Components/Testimonials";
+import News from "../Components/News";
 const Home = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const Home = () => {
       <Horarios />
       <div className="-mt-20">
         {" "}
+        <News />{" "}
         <FeaturedProducts />{" "}
       </div>
       <div className="-mt-20"> </div>
