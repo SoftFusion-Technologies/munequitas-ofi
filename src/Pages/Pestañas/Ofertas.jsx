@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../Styles/Productos.css";
 import { Link } from "react-router-dom"; // Importar Link
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import InfoSection from "../../Components/InfoSection.jsx";
 import ProductNotFound from "../../Components/ProductNotFound.jsx";
 import { ofertas } from "../../Helpers/Arrays/ofertas.js";
 import { Navigation } from "swiper/modules";
@@ -13,7 +12,7 @@ import Horarios from "../../Components/Horarios.jsx";
 
 const Ofertas = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
-/*   useEffect(() => {
+  /*   useEffect(() => {
     window.scrollTo({
       top: 0, // Desplazar hacia arriba de la página
       behavior: "smooth", // Añadir desplazamiento suave
@@ -166,6 +165,7 @@ const Ofertas = () => {
         </div>
       )}
       <div className="mt-16">
+        <InfoSection></InfoSection>
         <Horarios></Horarios>
       </div>
     </div>

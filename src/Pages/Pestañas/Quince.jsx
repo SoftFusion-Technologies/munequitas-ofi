@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../Styles/Productos.css";
 import { Link } from "react-router-dom"; // Importar Link
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import InfoSection from "../../Components/InfoSection.jsx";
 import ProductNotFound from "../../Components/ProductNotFound.jsx";
 import { quince } from "../../Helpers/Arrays/quince.js";
 import { Navigation } from "swiper/modules";
@@ -184,6 +183,7 @@ const Quince = () => {
         </div>
       )}
       <div className="mt-16">
+        <InfoSection></InfoSection>
         <Horarios></Horarios>
       </div>
     </div>

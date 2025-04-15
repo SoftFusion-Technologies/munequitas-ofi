@@ -1,27 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import '../../Styles/Productos.css';
-import { Link } from 'react-router-dom'; // Importar Link
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import ProductNotFound from '../../Components/ProductNotFound.jsx';
-import { nenas } from '../../Helpers/Arrays/nenas.js';
-import { Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import Horarios from '../../Components/Horarios.jsx';
+import React, { useEffect, useState } from "react";
+import "../../Styles/Productos.css";
+import { Link } from "react-router-dom"; // Importar Link
+import InfoSection from "../../Components/InfoSection.jsx";
+import ProductNotFound from "../../Components/ProductNotFound.jsx";
+import { nenas } from "../../Helpers/Arrays/nenas.js";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import Horarios from "../../Components/Horarios.jsx";
 
 const Nenas = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
   useEffect(() => {
     window.scrollTo({
       top: 0, // Desplazar hacia arriba de la página
-      behavior: 'smooth' // Añadir desplazamiento suave
+      behavior: "smooth", // Añadir desplazamiento suave
     });
   }, []);
 
   // Estado para manejar la búsqueda
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleWhatsAppClick = (nombre, precio) => {
     const phoneNumber = "+5493812062925"; // Número de WhatsApp
@@ -29,7 +28,7 @@ const Nenas = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, "_blank");
   };
   // Filtrar productos basados en el término de búsqueda
 
@@ -59,7 +58,7 @@ const Nenas = () => {
       </div>
 
       {filteredProductos.some(
-        (producto) => producto.categoria === 'simple'
+        (producto) => producto.categoria === "simple"
       ) && (
         <h1 className="text-rosa-pastel mt-10 text-3xl font-bold text-center sm:text-5xl mb-8 font-bignoodle">
           NENAS
@@ -123,7 +122,7 @@ const Nenas = () => {
             <div className="p-4 bg-white bg-opacity-70 backdrop-blur-lg rounded-b-lg shadow-md text-center ">
               <p className="text-gray-400 text-sm mb-1">Producto {index + 1}</p>
               {/* Botón de compra con redirección a WhatsApp */}
-              {producto.precio === "0" ? (<br></br>):null}
+              {producto.precio === "0" ? <br></br> : null}
               <div
                 className={`space-x-2 grid ${
                   producto.precio !== "" ? "grid-cols-2" : "grid-cols-1"
@@ -161,7 +160,6 @@ const Nenas = () => {
                     : null}
                 </button>
               </div>
-
             </div>
           </Link>
         ))}
@@ -173,7 +171,8 @@ const Nenas = () => {
           <ProductNotFound />
         </div>
       )}
-            <div className="mt-16">
+      <div className="mt-16">
+        <InfoSection></InfoSection>
         <Horarios></Horarios>
       </div>
     </div>

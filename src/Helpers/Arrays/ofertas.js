@@ -109,6 +109,8 @@ const precios = [
   ["25000", "0"], // 106
   ["20000", "0","","Alta costura"], // 107
   ["40000", "0"], // 108
+  ["0", "0","","(Solo top)"], // 109
+  ["0", "0","","(Solo top)"], // 110
 ];
 
 export const ofertas = useGaleriaConPrecios('ofertas', precios);

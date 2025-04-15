@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import News from "../../Components/News";
 import Horarios from "../../Components/Horarios";
+import InfoSection from "../../Components/InfoSection.jsx";
 
 const Novedades = () => {
   useEffect(() => {
@@ -13,6 +14,7 @@ const Novedades = () => {
   return (
     <>
       <News title={true}></News>
+      <InfoSection></InfoSection>
       <Horarios></Horarios>
     </>
   );

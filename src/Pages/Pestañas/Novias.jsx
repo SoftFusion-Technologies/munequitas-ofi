@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import Horarios from "../../Components/Horarios.jsx";
+import InfoSection from "../../Components/InfoSection.jsx";
 
 const Novias = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
@@ -176,6 +177,7 @@ const Novias = () => {
         </div>
       )}
       <div className="mt-16">
+        <InfoSection></InfoSection>
         <Horarios></Horarios>
       </div>
     </div>
