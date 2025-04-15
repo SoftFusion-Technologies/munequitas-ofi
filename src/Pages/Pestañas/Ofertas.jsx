@@ -130,6 +130,9 @@ const Ofertas = () => {
 
               {/* Botón de compra con redirección a WhatsApp */}
               <p className="text-gray-400 text-sm mb-1">Producto {index + 1}</p>
+              <p className="text-gray-400 text-sm mb-1">
+                {producto.marca ? producto.marca.toUpperCase() : <br></br>}
+              </p>
               <p className="text-sm text-gray-500 italic mb-2">
                 {producto.descripcion ? (
                   producto.descripcion.toUpperCase()
