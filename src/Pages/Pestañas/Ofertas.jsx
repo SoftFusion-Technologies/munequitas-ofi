@@ -13,13 +13,13 @@ import Horarios from "../../Components/Horarios.jsx";
 
 const Ofertas = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
-  useEffect(() => {
+/*   useEffect(() => {
     window.scrollTo({
       top: 0, // Desplazar hacia arriba de la página
       behavior: "smooth", // Añadir desplazamiento suave
     });
   }, []);
-
+ */
   // Estado para manejar la búsqueda
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -131,6 +131,13 @@ const Ofertas = () => {
 
               {/* Botón de compra con redirección a WhatsApp */}
               <p className="text-gray-400 text-sm mb-1">Producto {index + 1}</p>
+              <p className="text-sm text-gray-500 italic mb-2">
+                {producto.descripcion ? (
+                  producto.descripcion.toUpperCase()
+                ) : (
+                  <span className="text-gray-300">Sin descripción</span>
+                )}
+              </p>
 
               <button
                 className="bg-rosa-pastel hover:bg-pink-900 text-white font-bold py-2 px-4 rounded-lg mt-2 transition"
