@@ -97,7 +97,7 @@ const Navbar = () => {
                       <Link
                         to={item === "REMATE DE ROPA" ? "#" : link}
                         onClick={(e) => handleItemClick(item, e)}
-                        className={`px-2 py-1 rounded-md text-xs md:text-sm font-medium transform transition-transform duration-200 ease-in-out hover:scale-105 whitespace-nowrap ${
+                        className={`px-2 py-1 rounded-md text-xs md:text-sm font-bold transform transition-transform duration-200 ease-in-out hover:scale-105 whitespace-nowrap ${
                           isActive
                             ? "bg-pink-400 text-white"
                             : "text-white hover:text-pink-700"
@@ -107,12 +107,12 @@ const Navbar = () => {
                       </Link>
 
                       {item === "REMATE DE ROPA" && isSubMenuOpen && (
-                        <div className="absolute top-full left-0 bg-rosa-pastel shadow-md rounded-md mt-1 w-48 z-10">
+                        <div className="absolute top-full left-0 bg-rosa-pastel shadow-md rounded-md mt-1 w-48 z-30">
                           <div className="h-1 rounded-2xl"></div>
                           <div className="border-t border-pink-400 mx-1 my-1"></div>
                           <Link
                             to="/oferta-ropa-circular"
-                            className={`block px-4 py-2 text-sm ${
+                            className={`block px-4 py-2 text-sm font-bold ${
                               location.pathname === "/oferta-ropa-circular"
                                 ? "bg-pink-400 text-white"
                                 : "text-white hover:text-pink-700"
@@ -123,7 +123,7 @@ const Navbar = () => {
                           </Link>
                           <Link
                             to="/oferta-ropa-nueva"
-                            className={`block px-4 py-2 text-sm ${
+                            className={`block px-4 py-2 text-sm font-bold ${
                               location.pathname === "/oferta-ropa-nueva"
                                 ? "bg-pink-400 text-white"
                                 : "text-white hover:text-pink-700"
@@ -161,7 +161,7 @@ const Navbar = () => {
                 <Link
                   to={item === "REMATE DE ROPA" ? "#" : link}
                   onClick={(e) => handleItemClick(item, e)}
-                  className={`block px-2 py-1 rounded-md text-xs md:text-sm font-medium transform transition-transform duration-200 ease-in-out hover:scale-105 ${
+                  className={`block px-2 py-1 rounded-md text-xs md:text-sm font-bold transform transition-transform duration-200 ease-in-out hover:scale-105 ${
                     isActive
                       ? "bg-pink-400 text-white"
                       : "text-white hover:text-pink-700"
@@ -177,8 +177,8 @@ const Navbar = () => {
                       to="/oferta-ropa-circular"
                       className={`block px-4 py-2 text-sm ${
                         location.pathname === "/oferta-ropa-circular"
-                          ? "bg-pink-400 text-white"
-                          : "text-white hover:text-pink-700"
+                          ? "bg-pink-400 text-white font-bold"
+                          : "text-white hover:text-pink-700 font-bold"
                       }`}
                       onClick={() => {
                         setIsSubMenuOpen(false);
@@ -191,8 +191,8 @@ const Navbar = () => {
                       to="/oferta-ropa-nueva"
                       className={`block px-4 py-2 text-sm ${
                         location.pathname === "/oferta-ropa-nueva"
-                          ? "bg-pink-400 text-white"
-                          : "text-white hover:text-pink-700"
+                          ? "bg-pink-400 text-white font-bold"
+                          : "text-white hover:text-pink-700 font-bold"
                       }`}
                       onClick={() => {
                         setIsSubMenuOpen(false);
