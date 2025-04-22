@@ -1,32 +1,44 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import ImgLogo from '../Images/Img_navbar.png';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import ImgLogo from "../Images/Img_navbar.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+  const location = useLocation();
 
   const menuItems = [
-    'INICIO',
-    'OFERTAS',
-    'TOP',
-    'FALDAS',
-    'VESTIDOS LARGOS',
-    'VESTIDOS CORTOS',
-    'VESTIDOS NENAS',
-    'NOVIAS',
-    'QUINCE AÑOS',
-    'XXL',
-    'TOP FALDA',
-    'NOVEDADES',
+    "INICIO",
+    "OFERTAS",
+    "TOP",
+    "FALDAS",
+    "VESTIDOS LARGOS",
+    "VESTIDOS CORTOS",
+    "VESTIDOS NENAS",
+    "NOVIAS",
+    "QUINCE AÑOS",
+    "XXL",
+    "TOP FALDA",
+    "REMATE DE ROPA", 
+    "NOVEDADES",
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Función para formatear la ruta
   const formatLink = (item) =>
-    item === 'INICIO'
-      ? '/'
-      : `/${item.toLowerCase().replace(/\s+/g, '-').replace('_', '-')}`;
+    item === "INICIO"
+      ? "/"
+      : `/${encodeURIComponent(item.toLowerCase().replace(/\s+/g, "-").replace("_", "-"))}`;
+  
+  const handleItemClick = (item, e) => {
+    if (item === "REMATE DE ROPA") {
+      e.preventDefault();
+      setIsSubMenuOpen(!isSubMenuOpen);
+    } else {
+      setIsOpen(false);
+      setIsSubMenuOpen(false);
+    }
+  };
 
   return (
     <nav className="bg-rosa-pastel shadow-lg">
@@ -39,7 +51,7 @@ const Navbar = () => {
               type="button"
               className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
               aria-controls="mobile-menu"
-              aria-expanded={isOpen ? 'true' : 'false'}
+              aria-expanded={isOpen ? "true" : "false"}
             >
               <span className="sr-only">Abrir menú principal</span>
               <svg
@@ -48,7 +60,6 @@ const Navbar = () => {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -75,15 +86,57 @@ const Navbar = () => {
             {/* Menú de escritorio */}
             <div className="hidden xl:block xl:ml-5">
               <div className="flex space-x-2 justify-center">
-                {menuItems.map((item, idx) => (
-                  <Link
-                    key={idx}
-                    to={formatLink(item)}
-                    className="text-white hover:text-pink-700 px-2 py-1 rounded-md text-xs md:text-sm font-medium transform transition-transform duration-200 ease-in-out hover:scale-105 whitespace-nowrap"
-                  >
-                    {item}
-                  </Link>
-                ))}
+                {menuItems.map((item, idx) => {
+                  const link = formatLink(item);
+                  const isActive =
+                    item !== "REMATE DE ROPA" &&
+                    location.pathname === link;
+
+                  return (
+                    <div key={idx} className="relative">
+                      <Link
+                        to={item === "REMATE DE ROPA" ? "#" : link}
+                        onClick={(e) => handleItemClick(item, e)}
+                        className={`px-2 py-1 rounded-md text-xs md:text-sm font-medium transform transition-transform duration-200 ease-in-out hover:scale-105 whitespace-nowrap ${
+                          isActive
+                            ? "bg-pink-400 text-white"
+                            : "text-white hover:text-pink-700"
+                        }`}
+                      >
+                        {item}
+                      </Link>
+
+                      {item === "REMATE DE ROPA" && isSubMenuOpen && (
+                        <div className="absolute top-full left-0 bg-rosa-pastel shadow-md rounded-md mt-1 w-48 z-10">
+                          <div className="h-1 rounded-2xl"></div>
+                          <div className="border-t border-pink-400 mx-1 my-1"></div>
+                          <Link
+                            to="/oferta-ropa-circular"
+                            className={`block px-4 py-2 text-sm ${
+                              location.pathname === "/oferta-ropa-circular"
+                                ? "bg-pink-400 text-white"
+                                : "text-white hover:text-pink-700"
+                            }`}
+                            onClick={() => setIsSubMenuOpen(false)}
+                          >
+                            CIRCULAR
+                          </Link>
+                          <Link
+                            to="/oferta-ropa-nueva"
+                            className={`block px-4 py-2 text-sm ${
+                              location.pathname === "/oferta-ropa-nueva"
+                                ? "bg-pink-400 text-white"
+                                : "text-white hover:text-pink-700"
+                            }`}
+                            onClick={() => setIsSubMenuOpen(false)}
+                          >
+                            NUEVA
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -93,21 +146,66 @@ const Navbar = () => {
       {/* Menú móvil */}
       <div
         className={`${
-          isOpen ? 'block' : 'hidden'
+          isOpen ? "block" : "hidden"
         } xl:hidden transition-all duration-300 ease-in-out`}
         id="mobile-menu"
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
-          {menuItems.map((item, idx) => (
-            <Link
-              key={idx}
-              to={formatLink(item)}
-              onClick={() => setIsOpen(false)}
-              className="block text-white hover:text-pink-700 px-2 py-1 rounded-md text-xs md:text-sm font-medium transform transition-transform duration-200 ease-in-out hover:scale-105"
-            >
-              {item}
-            </Link>
-          ))}
+          {menuItems.map((item, idx) => {
+            const link = formatLink(item);
+            const isActive =
+              item !== "REMATE DE ROPA" && location.pathname === link;
+
+            return (
+              <div key={idx} className="relative">
+                <Link
+                  to={item === "REMATE DE ROPA" ? "#" : link}
+                  onClick={(e) => handleItemClick(item, e)}
+                  className={`block px-2 py-1 rounded-md text-xs md:text-sm font-medium transform transition-transform duration-200 ease-in-out hover:scale-105 ${
+                    isActive
+                      ? "bg-pink-400 text-white"
+                      : "text-white hover:text-pink-700"
+                  }`}
+                >
+                  {item}
+                </Link>
+
+                {item === "REMATE DE ROPA" && isSubMenuOpen && (
+                  <div className="absolute top-full left-0 bg-rosa-pastel shadow-md rounded-md mt-1 w-full z-10">
+                    <div className="border-t border-pink-400 mx-1 my-1"></div>
+                    <Link
+                      to="/oferta-ropa-circular"
+                      className={`block px-4 py-2 text-sm ${
+                        location.pathname === "/oferta-ropa-circular"
+                          ? "bg-pink-400 text-white"
+                          : "text-white hover:text-pink-700"
+                      }`}
+                      onClick={() => {
+                        setIsSubMenuOpen(false);
+                        setIsOpen(false);
+                      }}
+                    >
+                      CIRCULAR
+                    </Link>
+                    <Link
+                      to="/oferta-ropa-nueva"
+                      className={`block px-4 py-2 text-sm ${
+                        location.pathname === "/oferta-ropa-nueva"
+                          ? "bg-pink-400 text-white"
+                          : "text-white hover:text-pink-700"
+                      }`}
+                      onClick={() => {
+                        setIsSubMenuOpen(false);
+                        setIsOpen(false);
+                      }}
+                    >
+                      NUEVA
+                    </Link>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </nav>

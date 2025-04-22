@@ -17,6 +17,8 @@ import Top from './Pages/Pestañas/Top';
 import Tops from './Pages/Pestañas/Tops';
 import Faldas from './Pages/Pestañas/Faldas';
 import Novedades from './Pages/Pestañas/Novedades';
+import Oferta_Circular from './Pages/Pestañas/Oferta_Circular';
+import Oferta_Nueva from './Pages/Pestañas/Oferta_Nueva';
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
         <Route path="/xxl" element={<XXL />}></Route>
         <Route path="/top-falda" element={<Top />}></Route>
         <Route path="/novedades" element={<Novedades />}></Route>
+        <Route path="/oferta-ropa-circular" element={<Oferta_Circular />}></Route>
+        <Route path="/oferta-ropa-nueva" element={<Oferta_Nueva />}></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Mapa></Mapa>
