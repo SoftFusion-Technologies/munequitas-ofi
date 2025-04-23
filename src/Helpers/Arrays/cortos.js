@@ -71,6 +71,7 @@ const precios = [
   ["45000", "20000", "marca Tucci"], // 59
   ["45000", "20000"], // 60
   ["45000", "25000"], // 60
+  ["130000", "45000"], // 60
 ];
 
 export const cortos = useGaleriaConPrecios('cortos', precios);

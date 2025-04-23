@@ -141,21 +141,26 @@ const BasePage = ({ solo_venta = false, array = [], title = "" }) => {
                 </p>
 
                 {solo_venta === true ? (
-                  <button
-                    className="bg-rosa-pastel hover:bg-pink-900 text-white font-bold py-2 px-4 rounded-lg mt-2 transition"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleWhatsAppClick(producto.title, producto.precio);
-                    }}
+                  <div
+                    className={`space-x-2 grid grid-cols-1"
+                    }`}
                   >
-                    COMPRAR{" "}
-                    {producto.precio !== "0"
-                      ? `$${Number(producto.precio).toLocaleString("es-AR", {
-                          minimumFractionDigits: 2,
-                          maximumFractionDigits: 2,
-                        })}`
-                      : ""}
-                  </button>
+                    <button
+                      className="bg-rosa-pastel hover:bg-pink-900 text-white font-bold py-2 px-4 rounded-lg mt-2 transition"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleWhatsAppClick(producto.title, producto.precio);
+                      }}
+                    >
+                      COMPRAR <br></br>
+                      {producto.precio !== "0"
+                        ? `$${Number(producto.precio).toLocaleString("es-AR", {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                          })}`
+                        : ""}
+                    </button>
+                  </div>
                 ) : (
                   <>
                     {producto.precio === "0" ? <br></br> : null}
@@ -164,24 +169,29 @@ const BasePage = ({ solo_venta = false, array = [], title = "" }) => {
                         producto.precio !== "" ? "grid-cols-2" : "grid-cols-1"
                       }`}
                     >
-                      <button
-                        className="bg-rosa-pastel hover:bg-pink-900 text-white text-sm font-bold py-2 rounded-lg mt-2 transition "
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleWhatsAppClick(producto.title, producto.precio);
-                        }}
-                      >
-                        COMPRAR <br></br>
-                        {producto.precio !== "0"
-                          ? `$${Number(producto.precio).toLocaleString(
-                              "es-AR",
-                              {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2,
-                              }
-                            )}`
-                          : null}
-                      </button>
+                      {producto.precio !== "" ? (
+                        <button
+                          className="bg-rosa-pastel hover:bg-pink-900 text-white text-sm font-bold py-2 rounded-lg mt-2 transition "
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleWhatsAppClick(
+                              producto.title,
+                              producto.precio
+                            );
+                          }}
+                        >
+                          COMPRAR <br></br>
+                          {producto.precio !== "0"
+                            ? `$${Number(producto.precio).toLocaleString(
+                                "es-AR",
+                                {
+                                  minimumFractionDigits: 2,
+                                  maximumFractionDigits: 2,
+                                }
+                              )}`
+                            : null}
+                        </button>
+                      ) : null}
 
                       <button
                         className="bg-rosa-pastel hover:bg-pink-900 text-white text-sm font-bold py-2 rounded-lg mt-2 transition"

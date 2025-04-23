@@ -13,7 +13,6 @@ import { useGaleriaConPrecios } from '../../shared/Config/HooksArray';
     ["50000", "30000"], // 3
     ["45000", "25000"], // 4
     ["0", "0"], // 5
-    ["45000", "30000"], // 6
     ["0", "0"], // 7
     ["0", "0"], // 8
     ["0", "0"], // 9
@@ -93,6 +92,8 @@ import { useGaleriaConPrecios } from '../../shared/Config/HooksArray';
     ["0", "0"], // 83
     ["0", "0"], // 84
     ["", "100000"], // 85
+    ["120000", "45000"], // 86
+    ["", "100000"], // 87
   ];
   
 export const largos = useGaleriaConPrecios('largos', precios);
