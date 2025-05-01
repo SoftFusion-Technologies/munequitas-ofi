@@ -16,7 +16,7 @@ const Horarios = () => {
       texto_1: "¡Sin cargo y sin límites!",
       ubicacion_1: "San Miguel de Tucumán",
       especificacion_1: "(Venta y Alquiler)",
-      texto_2: "¡Envíos gratis a partir de $100.000!",
+      texto_2: "¡Envíos gratis a partir de $150.000!",
       ubicacion_2: "A todo el país",
       especificacion_2: "(Solo para Venta)",
     },

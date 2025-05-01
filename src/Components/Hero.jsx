@@ -30,7 +30,7 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            ¡Envíos gratis a partir de $100.000!
+            ¡Envíos gratis a partir de $150.000!
           </motion.p>
 
           <motion.h1
