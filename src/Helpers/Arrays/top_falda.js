@@ -1,14 +1,3 @@
-/* export const top = Array.from({ length: 69 }, (_, i) => ({
-  id: 101 + i,
-  title: 'VESTIDO TOP O FALDA',
-  categoria: 'simple',
-  precio:
-    'Top más economicos: $85.000. Top y faldas trabajados $100.000 - Top y falda básicos $70.000 - Venta $160.000',
-  descripcion: 'Pueden optar por el top y falda que gusten.',
-  imageFront: `/Top/top${i + 1}.jpeg`
-}));
- */
-
 import { useGaleriaConPrecios } from '../../shared/Config/HooksArray';
 const precios = [
   ["130000", "65000", ""], // 1
@@ -53,7 +42,7 @@ const precios = [
   ["220000", "110000", ""], // 40
   ["160000", "80000", "importado"], // 41
   ["80000", "35000", "importado"], // 42
-  ["", "40000", ""], // 43 // No va
+  ["", "40000", ""], // 43 
   ["150000", "60000", "importado"], // 44
   ["100000", "45000", "importado"], // 45
   ["150000", "55000", "", "Alta costura"], // 46

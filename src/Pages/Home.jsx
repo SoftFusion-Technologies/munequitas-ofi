@@ -4,6 +4,7 @@ import Hero from "../Components/Hero";
 import InfoSection from "../Components/InfoSection";
 import FeaturedProducts from "./FeaturedProducts";
 import Horarios from "../Components/Horarios";
+import Ofertas from "../Components/Ofertas";
 
 import MediosDePago from "../Components/MediosDePago";
 import MediosDeEnvio from "../Components/MediosDeEnvio";
@@ -12,13 +13,13 @@ import News from "../Components/News";
 const Home = () => {
   return (
     <div>
+      <Ofertas />
       <Hero />
       <InfoSection />
       <Horarios />
       <div className="-mt-20">
         {" "}
-        <News />{" "}
-        <FeaturedProducts />{" "}
+        <News /> <FeaturedProducts />{" "}
       </div>
       <div className="-mt-20"> </div>
       {/* Contenedor flex para mostrar los componentes en una fila */}

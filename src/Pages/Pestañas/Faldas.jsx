@@ -60,7 +60,7 @@ const Faldas = () => {
         (producto) => producto.categoria === "simple"
       ) && (
         <h1 className="text-center text-rosa-pastel mt-10 text-xl font-bold sm:text-5xl mb-8 font-bignoodle">
-          Faldas
+          FALDAS
         </h1>
       )}
       {/* Grid de productos, se adapta a 3 o 4 por fila */}
