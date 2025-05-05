@@ -12,12 +12,12 @@ import Horarios from "../../Components/Horarios.jsx";
 
 const Largos = () => {
   // Desplazar hacia la parte superior cuando el componente se monte
-  useEffect(() => {
+/*   useEffect(() => {
     window.scrollTo({
       top: 0, // Desplazar hacia arriba de la página
       behavior: "smooth", // Añadir desplazamiento suave
     });
-  }, []);
+  }, []); */
 
   // Estado para manejar la búsqueda
   const [searchQuery, setSearchQuery] = useState("");
